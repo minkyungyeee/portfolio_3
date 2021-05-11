@@ -67,6 +67,7 @@
                     if(cnt<0){cnt=n-1}
                     $slideWrap.stop().animate({left:-winW*cnt},0);
                 });
+                pageBtnColorEventFn();
             }
 
             function nextSlideCountFn(){
@@ -79,6 +80,15 @@
                 mainSlideFn();
             }
 
+            function pageBtnColorEventFn(){
+                var z = cnt;
+                if(z>2){z=0}
+                $pageBtn.removeClass('addSvg');
+                $pageBtn.eq(z).addClass('addSvg');
+            }
+
+            pageBtnColorEventFn();
+
             $pageBtn.each(function(idx){
                 $(this).on({
                     click:function(){
@@ -88,6 +98,28 @@
                     }
                 });
             });
+
+            function autoTimerFn(){
+                setId = setInterval(nextSlideCountFn,6000);
+            }
+
+            autoTimerFn();
+
+            function pauseTimerFn(){
+                var t = 0;
+                clearInterval(setId);
+                clearInterval(setId2);
+                setId2 = setInterval(function(){
+                    t++;
+                    if(t>=6){
+                        t=0;
+                        clearInterval(setId);
+                        clearInterval(setId2);
+                        nextSlideCountFn();
+                        autoTimerFn();
+                    }
+                },1000);
+            }
 
             $slideView.on({
                 mousedown:function(e){
@@ -160,28 +192,6 @@
                 }
             }
 
-
-            function autoTimerFn(){
-                setId = setInterval(nextSlideCountFn,6000);
-            }
-
-            autoTimerFn();
-
-            function pauseTimerFn(){
-                var t = 0;
-                clearInterval(setId);
-                clearInterval(setId2);
-                setId2 = setInterval(function(){
-                    t++;
-                    if(t>6){
-                        t=0;
-                        clearInterval(setId);
-                        clearInterval(setId2);
-                        nextSlideCountFn();
-                        autoTimerFn();
-                    }
-                },1000);
-            }
 
         },
         section2Fn:function(){
