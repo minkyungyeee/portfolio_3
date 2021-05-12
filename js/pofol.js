@@ -2,12 +2,48 @@
     var pofol = {
         init:function(){
             var that = this;
+                that.sectionMoveFn();
                 that.headerFn();
                 that.section1Fn();
+                that.section1NoticeFn();
                 that.section2Fn();
                 that.section3Fn();
                 that.section4Fn();
                 that.footerFn();
+        },
+        sectionMoveFn:function(){
+            var $section = $('#main .section');
+            var n = $('#main .section').length; //3
+            var wheelDelta = 0;
+
+            $section.each(function(idx){
+                $(this).on('mousewheel DOMMouseScroll', function(e){
+                    e.preventDefault();
+                    //console.log(e) => 아래로움직이면 -120, 위로움직이면 120
+                    if(e.originalEvent.wheelDelta){ //파이어폭스 제외 모든 브라우저
+                        wheelDelta = e.originalEvent.wheelDelta;
+                    }
+                    else{
+                        wheelDelta = e.detail*-1; //파이어폭스
+                    }
+
+                    n = $('#main .section').length;
+                    if(wheelDelta < 0){     //마우스 다운
+                        if(idx<n-1){    //내려갈 공간이있다면
+                            if(!$('html,body').is(':animated')){
+                                $('html,body').stop().animate({scrollTop:$(this).next().offset().top},600,'easeInSine');
+                            }
+                        }
+                    }
+                    else {     //마우스 업
+                        if(idx>0){
+                            if(!$('html,body').is(':animated')){
+                                $('html,body').stop().animate({scrollTop:$(this).prev().offset().top},600,'easeInSine');
+                            }
+                        }
+                    }
+                });
+            });
         },
         headerFn:function(){
             var $header = $('#header');
@@ -191,14 +227,85 @@
                         }
                 }
             }
+        },
+        section1NoticeFn:function(){
+            //notice-rolling
+            var $noticeRolling = $('#section1 .notice-rolling');
+            var $noCntroBox = $('#section1 .notice-controller-box');
+            var $proBar= $('#section1 .progress-bar::after');
 
+            var n = $('#section1 .notice-rolling').length; //6
+            var cnt = 0;
+            var next = [];
+            var prev = [];
+            var setId = null;
+            var setId2 = null;
 
+            function mainNextSlideFn(){
+                for(var i=0;i<n;i++){
+                    next[i] = i;
+                }//next[0,1,2,3,4,5]
+                var imsi = next.pop();
+                    next.unshift(imsi); //next[5,0,1,2,3,4]
+                for(var i=0;i<cnt;i++){
+                    var imsi = next.shift();
+                        next.push(imsi);
+                }
+
+                for(var i=0;i<n;i++){
+                    $noticeRolling.eq(next[i]).stop().animate({top:100*i},0).animate({top:100*(i-1)},600);
+                }
+            }
+
+            function nextSlideCountFn(){
+                cnt ++;
+                if(cnt>n-1){cnt=0}
+                mainNextSlideFn();
+            }
+
+            function autoPlay(){
+                setId = setInterval(nextSlideCountFn,6000);
+            }
+
+            autoPlay();
         },
         section2Fn:function(){
+            var win = $(window);
+            var winW = $(window).innerWidth();
+            var winH = $(window).innerHeight();
+            var $sec2 = $('#section2');
 
+            function resizeFn(){
+                winW = $(window).innerWidth();
+                winH = $(window).innerHeight();
+
+                $sec2.css({width:winW,height:winH});
+            }
+
+            setTimeout(resizeFn,100);
+
+            win.resize(function(){
+                setTimeout(resizeFn,100);
+            });
         },
         section3Fn:function(){
+            var win = $(window);
+            var winW = $(window).innerWidth();
+            var winH = $(window).innerHeight();
+            var $sec3 = $('#section3');
 
+            function resizeFn(){
+                winW = $(window).innerWidth();
+                winH = $(window).innerHeight();
+
+                $sec3.css({width:winW,height:winH});
+            }
+
+            setTimeout(resizeFn,100);
+
+            win.resize(function(){
+                setTimeout(resizeFn,100);
+            });
         },
         section4Fn:function(){
 
