@@ -90,12 +90,29 @@
 #wrap #main #section1 .wrap .gap .container .slide-container .pagenation-btn-wrap > li .pagenation-btn.addSvg span {display:none;}
 #wrap #main #section1 .wrap .gap .container .slide-container .pagenation-btn-wrap > li .pagenation-btn svg {display:none;z-index:2;position:absolute;top:0;left:0;width:100%;height:100%;}
 #wrap #main #section1 .wrap .gap .container .slide-container .pagenation-btn-wrap > li .pagenation-btn.addSvg svg {display:inline-block;z-index:2;position:absolute;top:0;left:0;width:100%;height:100%;}
-/* #wrap #main #section1 .wrap .gap .container .slide-container .pagenation-btn-wrap > li .pagenation-btn svg circle {stroke-dasharray:0;} */
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-btn-wrap > li .pagenation-btn svg circle {stroke-dasharray:38;stroke-dashoffset:38;}
 #wrap #main #section1 .wrap .gap .container .slide-container .pagenation-btn-wrap > li .pagenation-btn.addSvg svg circle {stroke-dasharray:38;animation:svgAni1 6s;}
 @keyframes svgAni1 {
-    to {stroke-dashoffset:38;}
+    to {stroke-dashoffset:0;}
 }
 
+/* main-notice-rolling */
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap {z-index:2;position:absolute;bottom:80px;left:80px;color:#fff;}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container {}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-rolling-view {width:255px;height:100px;overflow: hidden;}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-rolling-view .notice-rolling-wrap {display:flex;flex-direction: column;flex-wrap: nowrap;justify-content: center;align-items: flex-start;}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-rolling-view .notice-rolling-wrap .notice-rolling {/* position:relative;top:-100%;left:0; */}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-rolling-view .notice-rolling-wrap .notice-rolling .rolling-btn {}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-rolling-view .notice-rolling-wrap .notice-rolling .rolling-btn .notice-title {text-overflow: ellipsis;white-space: nowrap;font-size:14px;font-weight:300;margin-bottom:16px;}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-rolling-view .notice-rolling-wrap .notice-rolling .rolling-btn .notice-title > span:nth-child(1){/* width:58px;height:24px; */padding:0 5px;line-height:24px;text-align:center;font-size:13px;border:1px solid #fff;margin-right:6px;}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-rolling-view .notice-rolling-wrap .notice-rolling .rolling-btn .notice-title > span:nth-child(2){}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-rolling-view .notice-rolling-wrap .notice-rolling .rolling-btn .notice-text {font-size:16px;font-weight:600;margin-bottom:40px;}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-rolling-view .notice-rolling-wrap .notice-rolling .rolling-btn .notice-text > span {}
 
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-controller-box {}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-controller-box .progress-bar {}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-controller-box .controll-btn {}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-controller-box .controll-btn .play {}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-controller-box .controll-btn .pause {}
 
 #wrap #footer {z-index:2;position:relative;}
