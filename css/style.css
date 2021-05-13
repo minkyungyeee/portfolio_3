@@ -118,17 +118,17 @@
 
 #wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box {z-index:2;position:relative;display:inline-block;}
 #wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box .progress-bar {z-index:1;position:relative;display:inline-block;width:100px;height:2px;background:#8e8f90;}
-#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box .progress-bar::after {z-index:2;content:'';display:block;position:absolute;top:0;left:0;width:0;height:100%;background:#fff;}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box .progress-bar::after {z-index:2;content:' ';display:block;position:absolute;top:0;left:0;width:0;height:100%;background:#fff;}
 #wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box.addRolling .progress-bar::after {width:100%;animation:proAni1 6s;}
 @keyframes proAni1 {
     0% {width:0}
     100% {width:100%}
 }
 #wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box .controll-btn {position:relative;display:inline-block;width:16px;height:16px;margin-left:10px;}
-#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box .controll-btn .pause {display:block;width:100%;height:100%;background:url(../img/main-con1-stopbt.png) no-repeat 0 0;background-size:cover;}
-#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box .controll-btn.addPause .pause {display:none;}
-#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box .controll-btn .play {display:none;position:absolute;top:0;left:0;width:100%;height:100%;background:url(../img/main-con1-playbt.png) no-repeat 0 0;background-size:cover;transition:all .3s;}
-#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box .controll-btn.addPause .play {display:block;}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box .controll-btn .pause {display:block;width:100%;height:100%;background:url(../img/main-con1-stopbt.png) no-repeat 0 0;background-size:cover;transform:rotateY(0);opacity:1;transition:all .3s;}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box .controll-btn.addPause .pause {transform:rotateY(180deg);opacity:0;}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box .controll-btn .play {display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:url(../img/main-con1-playbt.png) no-repeat 0 0;background-size:cover;transform:rotateY(180deg);opacity:0;transition:all .3s;}
+#wrap #main #section1 .wrap .gap .container .slide-container .main-notice-wrap .notice-rolling-container .notice-controller-box .controll-btn.addPause .play {transform:rotateZ(0);opacity:1;}
 
 
 

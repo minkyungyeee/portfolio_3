@@ -232,7 +232,8 @@
             //notice-rolling
             var $noticeRolling = $('#section1 .notice-rolling');
             var $noCntroBox = $('#section1 .notice-controller-box');
-            var $proBar= $('#section1 .progress-bar::after');
+            var $proBar= $('#section1 .progress-bar');
+            var $controllBtn = $('#section1 .controll-btn');
 
             var n = $('#section1 .notice-rolling').length; //6
             var cnt = 0;
@@ -240,6 +241,7 @@
             var prev = [];
             var setId = null;
             var setId2 = null;
+            var setId3 = null;
 
             function mainNextSlideFn(){
                 for(var i=0;i<n;i++){
@@ -257,17 +259,49 @@
                 }
             }
 
+            function proBarFn(){
+                setId = setTimeout(function(){
+                    $noCntroBox.addClass('addRolling');
+                },0);
+
+            }
+
+            proBarFn();
+
             function nextSlideCountFn(){
                 cnt ++;
                 if(cnt>n-1){cnt=0}
                 mainNextSlideFn();
+                if($noCntroBox.hasClass('addRolling')){
+                    clearTimeout(setId);
+                    $noCntroBox.removeClass('addRolling');
+                }
+
+                proBarFn();
             }
 
             function autoPlay(){
-                setId = setInterval(nextSlideCountFn,6000);
+                setId2 = setInterval(nextSlideCountFn,6000);
             }
 
             autoPlay();
+
+            $controllBtn.on({
+                click:function(){
+                    $(this).toggleClass('addPause');
+                }
+            });
+
+            function pauseTimerFn(){
+                if($controllBtn.hasClass('addPause')){
+                    clearTimeout(setId);
+                    clearInterval(setId2);
+                }
+                else if(!$controllBtn.hasClass('addPause')){
+                    autoPlay();
+                    proBarFn();
+                }
+            }
         },
         section2Fn:function(){
             var win = $(window);
