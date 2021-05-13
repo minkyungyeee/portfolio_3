@@ -238,12 +238,13 @@
             var n = $('#section1 .notice-rolling').length; //6
             var cnt = 0;
             var next = [];
-            var prev = [];
             var setId = null;
             var setId2 = null;
             var setId3 = null;
 
             function mainNextSlideFn(){
+                $noCntroBox.removeClass('addRolling');
+                clearTimeout(setId);
                 for(var i=0;i<n;i++){
                     next[i] = i;
                 }//next[0,1,2,3,4,5]
@@ -257,13 +258,15 @@
                 for(var i=0;i<n;i++){
                     $noticeRolling.eq(next[i]).stop().animate({top:100*i},0).animate({top:100*(i-1)},600);
                 }
+                
+                
+                proBarFn();
             }
 
             function proBarFn(){
                 setId = setTimeout(function(){
                     $noCntroBox.addClass('addRolling');
                 },0);
-
             }
 
             proBarFn();
@@ -272,12 +275,6 @@
                 cnt ++;
                 if(cnt>n-1){cnt=0}
                 mainNextSlideFn();
-                if($noCntroBox.hasClass('addRolling')){
-                    clearTimeout(setId);
-                    $noCntroBox.removeClass('addRolling');
-                }
-
-                proBarFn();
             }
 
             function autoPlay(){
@@ -289,6 +286,7 @@
             $controllBtn.on({
                 click:function(){
                     $(this).toggleClass('addPause');
+                    pauseTimerFn();
                 }
             });
 
@@ -298,8 +296,8 @@
                     clearInterval(setId2);
                 }
                 else if(!$controllBtn.hasClass('addPause')){
+                    nextSlideCountFn();
                     autoPlay();
-                    proBarFn();
                 }
             }
         },
