@@ -97,13 +97,28 @@
                 setTimeout(resizeFn,100);
             });
 
+            //첫슬라이드 스케일조절
+            $slide.eq(1).addClass('addSlide');
+
             function mainSlideFn(){
+                //스케일 초기화
+                $slide.removeClass('addSlide');
                 $slideWrap.stop().animate({left:-winW*cnt},600,function(){
                     if(cnt>n-1){cnt=0}
                     if(cnt<0){cnt=n-1}
                     $slideWrap.stop().animate({left:-winW*cnt},0);
+                    
                 });
+                addClassFn();
                 pageBtnColorEventFn();
+            }
+
+            function addClassFn(){
+                if(cnt>n-1){cnt=0}
+                if(cnt<0){cnt=n-1}
+                //slide.eq(1,2,3)에만 addClass될꺼 => 실제 0,1,2,3,4있음
+                //cnt는 0,1,2 반복
+                $slide.eq(cnt+1).addClass('addSlide');
             }
 
             function nextSlideCountFn(){
@@ -136,7 +151,7 @@
             });
 
             function autoTimerFn(){
-                setId = setInterval(nextSlideCountFn,6000);
+                setId = setInterval(nextSlideCountFn,8000);
             }
 
             autoTimerFn();
@@ -147,7 +162,7 @@
                 clearInterval(setId2);
                 setId2 = setInterval(function(){
                     t++;
-                    if(t>=6){
+                    if(t>=8){
                         t=0;
                         clearInterval(setId);
                         clearInterval(setId2);
