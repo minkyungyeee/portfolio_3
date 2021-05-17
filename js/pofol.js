@@ -69,6 +69,10 @@
             var $slideView = $('#section1 .slide-view');
             var $slideWrap = $('#section1 .slide-wrap');
             var $slide = $('#section1 .slide');
+            var $con = $('#section1 .text-box .con');
+            var $con1 = $('#section1 .text-box .con1');
+            var $con2 = $('#section1 .text-box .con2');
+            var $con3 = $('#section1 .text-box .con3');
             var $pageBtn = $('#section1 .pagenation-btn');
             
 
@@ -99,10 +103,11 @@
 
             //첫슬라이드 스케일조절
             $slide.eq(1).addClass('addSlide');
-
+            $con.addClass('addAni');
             function mainSlideFn(){
-                //스케일 초기화
+                //초기화
                 $slide.removeClass('addSlide');
+                $con.removeClass('addAni');
                 $slideWrap.stop().animate({left:-winW*cnt},600,function(){
                     if(cnt>n-1){cnt=0}
                     if(cnt<0){cnt=n-1}
@@ -119,6 +124,12 @@
                 //slide.eq(1,2,3)에만 addClass될꺼 => 실제 0,1,2,3,4있음
                 //cnt는 0,1,2 반복
                 $slide.eq(cnt+1).addClass('addSlide');
+                // $con1.css({opacity:1}).stop().animate({top:0},400,function(){
+                //     $con2.css({opacity:1}).stop().animate({top:0},600,function(){
+                //         $con3.css({opacity:1}).stop().animate({top:0},800)
+                //     });
+                // });
+                $con.addClass('addAni');
             }
 
             function nextSlideCountFn(){
@@ -321,6 +332,15 @@
             var winW = $(window).innerWidth();
             var winH = $(window).innerHeight();
             var $sec2 = $('#section2');
+            var $basicBg = $('#section2 basic-bg');
+            var $salesSlide = $('#section2 .sales-slide');
+            var slideW = $('#section2 .sales-slide').innerWidth();
+            var $bg = $('#section2 .bg');
+            
+            var $slideUl = $('#section2 .content > ul');
+            var $prevBtn = $('#section2 .prev-btn');
+            var $nextBtn = $('#section2 .next-btn');
+            var cnt = 0;
 
             function resizeFn(){
                 winW = $(window).innerWidth();
@@ -333,6 +353,56 @@
 
             win.resize(function(){
                 setTimeout(resizeFn,100);
+            });
+
+/*             function mainSlideFn(){
+                slideW = $('#section2 .sales-slide').innerWidth();
+                $slideUl.css({transform:'translate3d(' + -33.3333+'%'*cnt + ',0,0)'})
+            }
+
+            function nextCountFn(){
+                cnt ++;
+                mainSlideFn();
+            }
+
+            function prevCountFn(){
+                cnt --;
+                mainSlideFn();
+            }
+
+            $prevBtn.on({
+                click:function(){
+                    if(!$slideUl.is(':animated')){
+                        prevCountFn();
+                    }
+                }
+            });
+
+            $nextBtn.on({
+                click:function(){
+                    if(!$slideUl.is(':animated')){
+                        nextCountFn();
+                    }
+                }
+            }); */
+
+            $salesSlide.each(function(idx){
+                $(this).on({
+                    mouseenter:function(){
+                        $salesSlide.removeClass('addMouseOver');
+                        $basicBg.addClass('addMouseOver');
+                        $(this).addClass('addMouseOver');
+                        $bg.stop().animate({opacity:0},600);
+                        $bg.eq(idx).stop().animate({opacity:1},600);
+                    },
+                    mouseleave:function(){
+                        $salesSlide.removeClass('addMouseOver');
+                        $bg.stop().animate({opacity:0},1000);
+                        //$basicBg.stop().animate({opacity:0},300);
+                        $basicBg.removeClass('addMouseOver');
+                        
+                    }
+                });
             });
         },
         section3Fn:function(){
