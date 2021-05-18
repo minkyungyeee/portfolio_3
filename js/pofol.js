@@ -410,6 +410,7 @@
             var winW = $(window).innerWidth();
             var winH = $(window).innerHeight();
             var $sec3 = $('#section3');
+            var $listBox = $('#section3 .list-box')
 
             function resizeFn(){
                 winW = $(window).innerWidth();
@@ -422,6 +423,29 @@
 
             win.resize(function(){
                 setTimeout(resizeFn,100);
+            });
+
+            function mouseOverFn(){
+                $('.line:nth-child(1)').stop().animate({left:-100+'%'},0);
+                $('.line:nth-child(2)').stop().animate({top:-100+'%'},0);
+                $('.line:nth-child(3)').stop().animate({right:-100+'%'},0);
+                $('.line:nth-child(4)').stop().animate({bottom:-100+'%'},0);
+
+                $('.line:nth-child(1)').stop().animate({left:100+'%'},600,function(){
+                    $('.line:nth-child(2)').stop().animate({top:100+'%'},600,function(){
+                        $('.line:nth-child(3)').stop().animate({right:100+'%'},600,function(){
+                            $('.line:nth-child(4)').stop().animate({bottom:100+'%'},600)
+                        });
+                    });
+                });
+            }
+
+            $listBox.each(function(idx){
+                $(this).on({
+                    mouseenter:function(){
+
+                    }
+                });
             });
         },
         section4Fn:function(){
