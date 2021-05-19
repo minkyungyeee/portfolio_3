@@ -8,7 +8,6 @@
                 that.section1NoticeFn();
                 that.section2Fn();
                 that.section3Fn();
-                that.section4Fn();
                 that.footerFn();
         },
         sectionMoveFn:function(){
@@ -448,11 +447,15 @@
                 });
             });
         },
-        section4Fn:function(){
-
-        },
         footerFn:function(){
+            var $familyBtn = $('#footer .family-btn');
+            var $familySiteBox = $('#footer .family-site-box');
 
+            $familyBtn.on({
+                click:function(){
+                    $familySiteBox.toggleClass('addChk');
+                }
+            })
         }
     }
     pofol.init();
