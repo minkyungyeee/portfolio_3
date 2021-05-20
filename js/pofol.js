@@ -416,6 +416,10 @@
                 winH = $(window).innerHeight();
 
                 $sec3.css({width:winW,height:winH});
+
+                if(winW <= 770){
+                    $sec3.css({height:'auto'});
+                }
             }
 
             setTimeout(resizeFn,100);
