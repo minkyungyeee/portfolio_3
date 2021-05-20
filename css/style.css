@@ -23,6 +23,7 @@
 #wrap #header .wrap .gap .container #nav > ul {width:100%;}
 #wrap #header .wrap .gap .container #nav > ul > li {position:relative;display:inline-block;width:140px;}
 #wrap #header .wrap .gap .container #nav > ul > li > a.main-btn {display:block;color:#fff;width:100%;font-size:18px;font-weight:700;transition:color .3s;}
+#wrap #header .wrap .gap .container #nav > ul > li > a.main-btn > .m-close {display:none;}
 #wrap #header.over .wrap .gap .container #nav > ul > li > a.main-btn {color:#333;}
 
 #wrap #header .wrap .gap .container #nav > ul > li .sub {position:absolute;top:136px;left:0;display:block;color:#111;width:100%;line-height:200%;}
@@ -47,10 +48,10 @@
 #wrap #header .wrap .gap .container #aside > ul > li > a.mobile-btn {position:relative;display:block;width:100%;height:100%;}
 #wrap #header .wrap .gap .container #aside > ul > li > a.mobile-btn .bar {position:absolute;width:100%;height:2px;top:0;left:0;background:#fff;}
 #wrap #header .wrap .gap .container #aside > ul > li > a.mobile-btn .bar.bar1 {top:0;margin-top:0;transform:rotate(0deg)}
-#wrap #header .wrap .gap .container #aside > ul > li > a.mobile-btn.addClick .bar.bar1 {top:50%;margin-top:-1px;transform:rotate(45deg);animation:hamAni1 .6s;}
+#wrap #header .wrap .gap .container #aside > ul > li > a.mobile-btn.addClick .bar.bar1 {top:50%;margin-top:-1px;transform:rotate(135deg);animation:hamAni1 .6s;}
 @keyframes hamAni1 {
     0% {top:0;margin-top:0;transform:rotate(0deg)}
-    100% {top:50%;margin-top:-1px;transform:rotate(45deg);}
+    100% {top:50%;margin-top:-1px;transform:rotate(135deg);}
 }
 #wrap #header .wrap .gap .container #aside > ul > li > a.mobile-btn .bar.bar2 {top:50%;margin-top:-1px;opacity:1;}
 #wrap #header .wrap .gap .container #aside > ul > li > a.mobile-btn.addClick .bar.bar2 {opacity:0;animation:hamAni2 .6s;}
@@ -58,11 +59,11 @@
     0% {opacity:1;}
     100% {opacity:0;}
 }
-#wrap #header .wrap .gap .container #aside > ul > li > a.mobile-btn .bar.bar3 {top:auto;bottom:0;margin-top:0;transform:rotate(0deg);}
-#wrap #header .wrap .gap .container #aside > ul > li > a.mobile-btn.addClick .bar.bar3 {bottom:50%;margin-top:-1px;transform:rotate(135deg);animation:hamAni3 .6s;}
+#wrap #header .wrap .gap .container #aside > ul > li > a.mobile-btn .bar.bar3 {top:auto;bottom:0;margin-bottom:0;transform:rotate(0deg);}
+#wrap #header .wrap .gap .container #aside > ul > li > a.mobile-btn.addClick .bar.bar3 {bottom:50%;margin-bottom:-1px;transform:rotate(-135deg);animation:hamAni3 .6s;}
 @keyframes hamAni3 {
-    0% {bottom:0;margin-top:0;transform:rotate(0deg);}
-    100% {bottom:50%;margin-top:-1px;transform:rotate(135deg);}
+    0% {bottom:0;margin-bottom:0;transform:rotate(0deg);}
+    100% {bottom:50%;margin-bottom:-1px;transform:rotate(-135deg);}
 }
 
 
