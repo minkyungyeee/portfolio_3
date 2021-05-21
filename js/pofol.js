@@ -47,8 +47,12 @@
         headerFn:function(){
             var $header = $('#header');
             var $nav = $('#nav');
+            var $sub = $('#nav .sub');
             var $mainBtn = $('#header .main-btn');
             var $mobileBtn = $('#header .mobile-btn');
+            var $subShow = $('#wrap .sub-show');
+            var pc = 0;
+            var mo = 0;
 
             function pcEventFn(){
                 $nav.css({display:'inline-block'});
@@ -56,24 +60,68 @@
                 $mainBtn.on({
                     mouseenter:function(){
                         $header.addClass('over');
+                        $sub.stop().show();
                     }
                 });
                 $nav.on({
                     mouseleave:function(){
                         $header.removeClass('over');
+                        $sub.stop().hide();
                     }
                 });
             }
 
             function mobileEventFn(){
-                
+                $sub.stop().hide();
+
+                $mainBtn.off('mouseenter');
+                $nav.off('mouseleave');
             }
+
+            function pcMoEventFn(){
+                if($(window).innerWidth()>1020){
+                    pc = 1;
+                    mo = 0;
+                    pcEventFn();
+                }
+                else{
+                    pc = 0;
+                    mo = 1;
+                    mobileEventFn();
+                }
+            }
+
+            setTimeout(pcMoEventFn,100);
+            $(window).resize(function(){
+                setTimeout(pcMoEventFn,100);
+            });
+
+            $mainBtn.each(function(idx){
+                $(this).on({
+                    click:function(e){
+                        e.preventDefault();
+                        if(mo==1){
+                            $sub.stop().slideUp(300);
+                            
+    
+                            if(!$mainBtn.eq(idx).children().hasClass('addDepth')){
+                                $mainBtn.children().removeClass('addDepth')
+                            }
+                            $(this).next().stop().slideToggle(300);
+                            
+                            $(this).children().toggleClass('addDepth');
+                        }
+                    }
+                })
+            });
+
             $mobileBtn.on({
                 click:function(){
                     $header.toggleClass('over');
-                    $(this).toggleClass('addClick')
+                    $subShow.toggleClass('addSubActive');
+                    $(this).toggleClass('addClick');
                 }
-            })
+            });
         },
         section1Fn:function(){
             var win = $(window);

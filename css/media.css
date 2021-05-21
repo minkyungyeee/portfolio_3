@@ -69,11 +69,9 @@
 #wrap #header .wrap .gap .container #nav > ul > li > a.main-btn > .m-close.addDepth .close-line.close-line0 {transform:rotate(270deg)}
 #wrap #header .wrap .gap .container #nav > ul > li > a.main-btn > .m-close .close-line.close-line1 {top:50%;left:0;width:12px;height:2px;margin-top:-1px;}
 
-#wrap #header .wrap .gap .container #nav > ul > li .sub {display:none;position:absolute;top:0;left:0;color:#111;width:100%;line-height:200%;}
-#wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap {margin:0;}
-#wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap {width:100%;}
-#wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap > li {display:inline-block;width:100%;margin-bottom:17px;}
-#wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap > li .sub-menu {display:block;width:100%;color:#111;font-size:16px;font-weight:400;}
+#wrap #header .wrap .gap .container #nav > ul > li .sub {position:relative;top:0;left:0;margin-top:20px;padding-bottom:30px;border-bottom:1px solid #ddd;}
+#wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap > li {display:inline-block;width:100%;margin:0 0 12px;}
+#wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap > li .sub-menu {color:#333;padding-left:5%;font-size:16px;font-weight:400;}
 #wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap > li .sub-menu:hover {color:#8b2332;}
 
     #wrap #header .wrap .gap .container #aside > ul > li.alarm-box {display:none;}
