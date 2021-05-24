@@ -11,11 +11,13 @@
                 that.footerFn();
         },
         sectionMoveFn:function(){
+            var $main = $('#main');
             var $section = $('#main .section');
             var n = $('#main .section').length; //3
+            var cnt = 0; //스크롤 카운트
             var wheelDelta = 0;
 
-            $section.each(function(idx){
+/*             $section.each(function(idx){
                 $(this).on('mousewheel DOMMouseScroll', function(e){
                     e.preventDefault();
                     //console.log(e) => 아래로움직이면 -120, 위로움직이면 120
@@ -42,7 +44,46 @@
                         }
                     }
                 });
-            });
+            }); */
+
+            $main.on('mousewheel DOMMouseScroll', function(e){
+                e.preventDefault();
+                //console.log(e) => 아래로움직이면 -120, 위로움직이면 120
+                if(e.originalEvent.wheelDelta){ //파이어폭스 제외 모든 브라우저
+                    wheelDelta = e.originalEvent.wheelDelta;
+                }
+                else{
+                    wheelDelta = e.detail*-1; //파이어폭스
+                }
+
+                n = $('#main .section').length;
+
+                if(!$('html,body').is(':animated')){
+                    if(wheelDelta < 0){
+                        cnt ++;
+                        // if(cnt>=n-1){
+                        //     cnt = n-1;
+                        //     $('html,body').stop().animate({scrollTop:$section.eq(cnt-1).offset().top+600},600,'easeInSine');
+                        // }
+                        // else {
+                        //     $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
+                        // }
+                        if(cnt<n){
+                            $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
+                        }
+                        else{
+                            cnt = n-1;
+                        }
+                        //console.log(cnt)
+                    }
+                    else {
+                        cnt--;
+                        if(cnt<0){cnt=0;}
+                        $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
+                        //console.log(cnt)
+                    }
+                }
+            })
         },
         headerFn:function(){
             var $html = $('html');
@@ -376,34 +417,36 @@
 
             win.resize(function(){
                 setTimeout(resizeFn,100);
-                //setTimeout(mainSlideFn,100); //리사이즈될때마다 넓이값 맞게 움직임
-                $slideUl.stop().animate({left:-slideW * cnt},0)
+                setTimeout(mainSlideFn,100); //리사이즈될때마다 넓이값 맞게 움직
+                //$slideUl.stop().animate({left:-slideW * cnt},0)
             });
 
             function mainSlideFn(){
                 slideW = $('#section2 .sales-slide').innerWidth();
                 $slideUl.stop().animate({left:-slideW * cnt})
-                console.log(i)
+                console.log(i,cnt)
                 if(cnt==0){
-                    $prevBtn.css({opacity:0.5}).off('click');
+                    $prevBtn.css({opacity:0.5,cursor:'default'});
                 }
                 if(cnt>0 && cnt<i){
-                    $prevBtn.css({opacity:1}).on('click')
-                    $nextBtn.css({opacity:1}).on('click')
+                    $prevBtn.css({opacity:1,cursor:'pointer'});
+                    $nextBtn.css({opacity:1,cursor:'pointer'});
                 }
                 if(cnt==i){
-                    $nextBtn.css({opacity:.5}).off('click');
-                    $prevBtn.css({opacity:1}).on('click')
+                    $nextBtn.css({opacity:.5,cursor:'default'});
+                    $prevBtn.css({opacity:1,cursor:'pointer'});
                 }
             }
 
             function nextCountFn(){
                 cnt ++;
+                if(cnt>i){cnt=i}
                 mainSlideFn();
             }
 
             function prevCountFn(){
                 cnt --;
+                if(cnt<0){cnt=0}
                 mainSlideFn();
             }
 

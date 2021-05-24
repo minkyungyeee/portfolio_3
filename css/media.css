@@ -60,9 +60,9 @@
     #wrap #header.over {height:100px;background:#fff;}
     #wrap #header .wrap .gap {padding:0 5%;box-sizing: border-box;}
     
-#wrap #header .wrap .gap .container #nav {display:block;position:fixed;top:100px;opacity:0;right:-100%;width:45%;min-width:320px;height:100%;background:#fff;text-align:left;transition:all .6s ease-in-out;}
+#wrap #header .wrap .gap .container #nav {display:block;position:fixed;top:100px;opacity:0;right:-100%;width:45%;min-width:320px;height:100%;background:#fff;text-align:left;transition:all .6s ease-in-out;overflow-y:auto;}
 #wrap #header.over .wrap .gap .container #nav {right:0;opacity:1;}
-#wrap #header .wrap .gap .container #nav > ul {width:100%;}
+#wrap #header .wrap .gap .container #nav > ul {width:100%;padding-bottom:100px;}
 #wrap #header .wrap .gap .container #nav > ul > li {position:relative;display:block;width:100%;height:auto;margin:30px 0;}
 #wrap #header .wrap .gap .container #nav > ul > li > a.main-btn {position:relative;display:block;box-sizing: border-box;color:#333;width:100%;height:auto;line-height:120%;font-size:18px;font-weight:700;padding:0 5%;transition:all .3s;}
 #wrap #header .wrap .gap .container #nav > ul > li > a.main-btn > .m-close {position:absolute;top:50%;margin-top:-6px;right:5%;display:block;width:12px;height:12px;}
@@ -71,7 +71,7 @@
 #wrap #header .wrap .gap .container #nav > ul > li > a.main-btn > .m-close.addDepth .close-line.close-line0 {transform:rotate(270deg)}
 #wrap #header .wrap .gap .container #nav > ul > li > a.main-btn > .m-close .close-line.close-line1 {top:50%;left:0;width:12px;height:2px;margin-top:-1px;}
 
-#wrap #header .wrap .gap .container #nav > ul > li .sub {position:relative;top:0;left:0;margin-top:20px;padding-bottom:30px;border-bottom:1px solid #ddd;overflow-y:scroll;}
+#wrap #header .wrap .gap .container #nav > ul > li .sub {position:relative;top:0;left:0;margin-top:20px;padding-bottom:30px;border-bottom:1px solid #ddd;}
 #wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap > li {display:inline-block;width:100%;margin:0 0 12px;}
 #wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap > li .sub-menu {color:#333;padding-left:5%;font-size:16px;font-weight:400;}
 #wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap > li .sub-menu:hover {color:#8b2332;}
@@ -176,6 +176,7 @@
     #wrap #header .wrap .gap .container #logo {width:125px;}
     #wrap #header .wrap .gap .container #aside > ul > li.ham-box {width:18px;height:16px;}
     #wrap #header .wrap .gap .container #nav {top:68px;}
+    #wrap #header .wrap .gap .container #nav > ul {padding-bottom:68px;}
 
     /* section1 */
     #wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .text-wrap .text-gap .text-box .con > h2 {font-size:20px;line-height:130%;}
