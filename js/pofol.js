@@ -2,6 +2,7 @@
     var pofol = {
         init:function(){
             var that = this;
+                that.loadFn();
                 that.sectionMoveFn();
                 that.headerFn();
                 that.section1Fn();
@@ -10,8 +11,28 @@
                 that.section3Fn();
                 that.footerFn();
         },
+        loadFn:function(){
+            var $loadBox = $('#wrap .load-box');
+            var t = 0;
+            var setId = null;
+
+            $(document).ready(function(){
+                //$loadBox.css({display:'block'}).stop().animate({opacity:0},0).animate({opacity:1},400)
+                $loadBox.stop().fadeIn(300);
+
+                setId = setInterval(function(){
+                        t++;
+                        if(t>5){
+                            //$loadBox.stop().animate({opacity:0},1000);
+                            $loadBox.stop().fadeOut(200);
+                        }
+                    },200);
+
+            });
+        },
         sectionMoveFn:function(){
             var $main = $('#main');
+            var $header = $('#header');
             var $section = $('#main .section');
             var n = $('#main .section').length; //3
             var cnt = 0; //스크롤 카운트
@@ -61,26 +82,19 @@
                 if(!$('html,body').is(':animated')){
                     if(wheelDelta < 0){
                         cnt ++;
-                        // if(cnt>=n-1){
-                        //     cnt = n-1;
-                        //     $('html,body').stop().animate({scrollTop:$section.eq(cnt-1).offset().top+600},600,'easeInSine');
-                        // }
-                        // else {
-                        //     $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
-                        // }
+                        $header.addClass('addHide');
                         if(cnt<n){
                             $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
                         }
                         else{
                             cnt = n-1;
                         }
-                        //console.log(cnt)
                     }
                     else {
                         cnt--;
+                        $header.removeClass('addHide');
                         if(cnt<0){cnt=0;}
                         $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
-                        //console.log(cnt)
                     }
                 }
             })
@@ -384,7 +398,10 @@
             var $sec2 = $('#section2');
             var $basicBg = $('#section2 basic-bg');
             var $salesSlide = $('#section2 .sales-slide');
+            var $topTxt = $('#section2 .top-txt');
+            var topTxtH = winH * 0.309597523;
             var slideW = $('#section2 .sales-slide').innerWidth();
+            var slideH = winH;
             var $bg = $('#section2 .bg');
             
             var $slideUl = $('#section2 .content > ul');
@@ -393,12 +410,7 @@
             var cnt = 0;
             var i = 0; //화면크기에따른 슬라이드 횟수제한 변수
 
-            function resizeFn(){
-                winW = $(window).innerWidth();
-                winH = $(window).innerHeight();
-                slideW = $('#section2 .sales-slide').innerWidth();
-
-                $sec2.css({width:winW,height:winH});
+            function resizeColContrlFn(){
                 if(winW > 1800){ //4개씩 한 화면
                     i = 3;
                 }
@@ -411,6 +423,38 @@
                 else {  //1개씩 한 화면
                     i = 6;
                 }
+            }
+
+/*             function resizeHeiContrlFn(){
+                if(winH < 600){
+                    slideH = 600
+                }
+            } */
+
+            function resizeFn(){
+                winW = $(window).innerWidth();
+                winH = $(window).innerHeight();
+                slideW = $('#section2 .sales-slide').innerWidth();
+                slideH = winH;
+
+                if(winH < 800){
+                    slideH = 800
+                }
+                //$sec2.css({width:winW,height:winH});
+                $sec2.css({width:winW,height:slideH});
+
+                if(winW > 1700){ //H;300px
+                    topTxtH = winH * 0.309597523;
+                }
+                else if(winW > 1280){ //h:250px
+                    topTxtH = winH * 0.257997936;
+                }
+                else{   //h:200px
+                    topTxtH = winH * 0.206398349;
+                }
+                $topTxt.css({height:topTxtH});
+
+                resizeColContrlFn();
             }
 
             setTimeout(resizeFn,100);
