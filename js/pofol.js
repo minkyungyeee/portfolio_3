@@ -13,25 +13,19 @@
         },
         loadFn:function(){
             var $loadBox = $('#wrap .load-box');
-            var t = 0;
-            var setId = null;
+            var $html = $('html');
 
             $(document).ready(function(){
                 //$loadBox.css({display:'block'}).stop().animate({opacity:0},0).animate({opacity:1},400)
+                $html.addClass('prevenScrl');
                 $loadBox.stop().fadeIn(300);
 
-                // setId = setInterval(function(){
-                //         t++;
-                //         if(t>5){
-                //             //$loadBox.stop().animate({opacity:0},1000);
-                //             $loadBox.stop().fadeOut(200);
-                //         }
-                //     },200);
-
-                    setTimeout(function(){
-                        $loadBox.stop().fadeOut(200);
-                    },1000)
+                setTimeout(function(){
+                    $loadBox.stop().fadeOut(200);
+                },1000);
             });
+
+            $html.removeClass('prevenScrl');
         },
         sectionMoveFn:function(){
             var winH = $(window).innerHeight();
@@ -42,54 +36,6 @@
             var cnt = 0; //스크롤 카운트
             var wheelDelta = 0;
 
-            //반응형 방법 고려 1
-            // function resizeFn(){
-            //     winH = $(window).innerHeight();
-
-            //     if(winH > 600){
-            //         scrollFn();
-            //     }
-            // }
-            
-            // setTimeout(resizeFn,100);
-
-            // $(window).resize(function(){
-            //     setTimeout(resizeFn,100);
-            // });
-
-            // function scrollFn(){
-            //     $main.on('mousewheel DOMMouseScroll', function(e){
-            //         e.preventDefault();
-            //         //console.log(e) => 아래로움직이면 -120, 위로움직이면 120
-            //         if(e.originalEvent.wheelDelta){ //파이어폭스 제외 모든 브라우저
-            //             wheelDelta = e.originalEvent.wheelDelta;
-            //         }
-            //         else{
-            //             wheelDelta = e.detail*-1; //파이어폭스
-            //         }
-    
-            //         n = $('#main .section').length;
-    
-            //         if(!$('html,body').is(':animated')){
-            //             if(wheelDelta < 0){
-            //                 cnt ++;
-            //                 $header.addClass('addHide');
-            //                 if(cnt<n){
-            //                     $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
-            //                 }
-            //                 else{
-            //                     cnt = n-1;
-            //                 }
-            //             }
-            //             else {
-            //                 cnt--;
-            //                 $header.removeClass('addHide');
-            //                 if(cnt<0){cnt=0;}
-            //                 $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
-            //             }
-            //         }
-            //     });
-            // }
             $main.on('mousewheel DOMMouseScroll', function(e){
                 e.preventDefault();
                 //console.log(e) => 아래로움직이면 -120, 위로움직이면 120
@@ -131,6 +77,10 @@
             var $mobileBtn = $('#header .mobile-btn');
             var $mClose = $('#nav .m-close')
             var $subShow = $('#wrap .sub-show');
+
+            var $login = $('#login');
+            var $loginBtn = $('#aside .login');
+            var $loginClsBtn = $('#login .close-btn');
             var pc = 0;
             var mo = 0;
 
@@ -184,7 +134,8 @@
             });
 
             $mobileBtn.on({
-                click:function(){
+                click:function(e){
+                    e.preventDefault();
                     $header.toggleClass('over');
                     $html.toggleClass('addSub');
                     $subShow.toggleClass('addSubActive'); //검은 배경추가
@@ -207,6 +158,21 @@
                         }
                     }
                 })
+            });
+
+            $loginBtn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $subShow.addClass('addAsideActive');
+                    $login.addClass('addActive');
+                }
+            });
+            $loginClsBtn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $subShow.removeClass('addAsideActive');
+                    $login.removeClass('addActive');
+                }
             });
         },
         section1Fn:function(){
