@@ -20,17 +20,21 @@
                 //$loadBox.css({display:'block'}).stop().animate({opacity:0},0).animate({opacity:1},400)
                 $loadBox.stop().fadeIn(300);
 
-                setId = setInterval(function(){
-                        t++;
-                        if(t>5){
-                            //$loadBox.stop().animate({opacity:0},1000);
-                            $loadBox.stop().fadeOut(200);
-                        }
-                    },200);
+                // setId = setInterval(function(){
+                //         t++;
+                //         if(t>5){
+                //             //$loadBox.stop().animate({opacity:0},1000);
+                //             $loadBox.stop().fadeOut(200);
+                //         }
+                //     },200);
 
+                    setTimeout(function(){
+                        $loadBox.stop().fadeOut(200);
+                    },1000)
             });
         },
         sectionMoveFn:function(){
+            var winH = $(window).innerHeight();
             var $main = $('#main');
             var $header = $('#header');
             var $section = $('#main .section');
@@ -38,35 +42,54 @@
             var cnt = 0; //스크롤 카운트
             var wheelDelta = 0;
 
-/*             $section.each(function(idx){
-                $(this).on('mousewheel DOMMouseScroll', function(e){
-                    e.preventDefault();
-                    //console.log(e) => 아래로움직이면 -120, 위로움직이면 120
-                    if(e.originalEvent.wheelDelta){ //파이어폭스 제외 모든 브라우저
-                        wheelDelta = e.originalEvent.wheelDelta;
-                    }
-                    else{
-                        wheelDelta = e.detail*-1; //파이어폭스
-                    }
+            //반응형 방법 고려 1
+            // function resizeFn(){
+            //     winH = $(window).innerHeight();
 
-                    n = $('#main .section').length;
-                    if(wheelDelta < 0){     //마우스 다운
-                        if(idx<n-1){    //내려갈 공간이있다면
-                            if(!$('html,body').is(':animated')){
-                                $('html,body').stop().animate({scrollTop:$(this).next().offset().top},600,'easeInSine');
-                            }
-                        }
-                    }
-                    else {     //마우스 업
-                        if(idx>0){
-                            if(!$('html,body').is(':animated')){
-                                $('html,body').stop().animate({scrollTop:$(this).prev().offset().top},600,'easeInSine');
-                            }
-                        }
-                    }
-                });
-            }); */
+            //     if(winH > 600){
+            //         scrollFn();
+            //     }
+            // }
+            
+            // setTimeout(resizeFn,100);
 
+            // $(window).resize(function(){
+            //     setTimeout(resizeFn,100);
+            // });
+
+            // function scrollFn(){
+            //     $main.on('mousewheel DOMMouseScroll', function(e){
+            //         e.preventDefault();
+            //         //console.log(e) => 아래로움직이면 -120, 위로움직이면 120
+            //         if(e.originalEvent.wheelDelta){ //파이어폭스 제외 모든 브라우저
+            //             wheelDelta = e.originalEvent.wheelDelta;
+            //         }
+            //         else{
+            //             wheelDelta = e.detail*-1; //파이어폭스
+            //         }
+    
+            //         n = $('#main .section').length;
+    
+            //         if(!$('html,body').is(':animated')){
+            //             if(wheelDelta < 0){
+            //                 cnt ++;
+            //                 $header.addClass('addHide');
+            //                 if(cnt<n){
+            //                     $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
+            //                 }
+            //                 else{
+            //                     cnt = n-1;
+            //                 }
+            //             }
+            //             else {
+            //                 cnt--;
+            //                 $header.removeClass('addHide');
+            //                 if(cnt<0){cnt=0;}
+            //                 $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
+            //             }
+            //         }
+            //     });
+            // }
             $main.on('mousewheel DOMMouseScroll', function(e){
                 e.preventDefault();
                 //console.log(e) => 아래로움직이면 -120, 위로움직이면 120
@@ -97,7 +120,7 @@
                         $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
                     }
                 }
-            })
+            });
         },
         headerFn:function(){
             var $html = $('html');
@@ -396,12 +419,12 @@
             var winW = $(window).innerWidth();
             var winH = $(window).innerHeight();
             var $sec2 = $('#section2');
+            var sec2H = winH;
             var $basicBg = $('#section2 basic-bg');
             var $salesSlide = $('#section2 .sales-slide');
             var $topTxt = $('#section2 .top-txt');
             var topTxtH = winH * 0.309597523;
             var slideW = $('#section2 .sales-slide').innerWidth();
-            var slideH = winH;
             var $bg = $('#section2 .bg');
             
             var $slideUl = $('#section2 .content > ul');
@@ -435,13 +458,13 @@
                 winW = $(window).innerWidth();
                 winH = $(window).innerHeight();
                 slideW = $('#section2 .sales-slide').innerWidth();
-                slideH = winH;
+                sec2H = winH;
 
                 if(winH < 800){
-                    slideH = 800
+                    sec2H = 800
                 }
                 //$sec2.css({width:winW,height:winH});
-                $sec2.css({width:winW,height:slideH});
+                $sec2.css({width:winW,height:sec2H});
 
                 if(winW > 1700){ //H;300px
                     topTxtH = winH * 0.309597523;
@@ -536,17 +559,21 @@
             var winW = $(window).innerWidth();
             var winH = $(window).innerHeight();
             var $sec3 = $('#section3');
+            var sec3H = winH
             var $listBox = $('#section3 .list-box')
 
             function resizeFn(){
                 winW = $(window).innerWidth();
                 winH = $(window).innerHeight();
+                sec3H = winH
 
-                $sec3.css({width:winW,height:winH});
-
+                $sec3.css({width:winW,height:sec3H});
+                
                 if(winW <= 770){
                     $sec3.css({height:'auto'});
                 }
+
+                
             }
 
             setTimeout(resizeFn,100);
@@ -555,25 +582,14 @@
                 setTimeout(resizeFn,100);
             });
 
-            function mouseOverFn(){
-                $('.line:nth-child(1)').stop().animate({left:-100+'%'},0);
-                $('.line:nth-child(2)').stop().animate({top:-100+'%'},0);
-                $('.line:nth-child(3)').stop().animate({right:-100+'%'},0);
-                $('.line:nth-child(4)').stop().animate({bottom:-100+'%'},0);
-
-                $('.line:nth-child(1)').stop().animate({left:100+'%'},600,function(){
-                    $('.line:nth-child(2)').stop().animate({top:100+'%'},600,function(){
-                        $('.line:nth-child(3)').stop().animate({right:100+'%'},600,function(){
-                            $('.line:nth-child(4)').stop().animate({bottom:100+'%'},600)
-                        });
-                    });
-                });
-            }
-
             $listBox.each(function(idx){
                 $(this).on({
                     mouseenter:function(){
-
+                        $listBox.removeClass('addLine');
+                        $(this).addClass('addLine');
+                    },
+                    mouseleave:function(){
+                        $(this).removeClass('addLine');
                     }
                 });
             });

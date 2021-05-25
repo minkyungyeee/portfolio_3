@@ -92,21 +92,30 @@
 
 
 /* login active */
-#wrap #login {}
-#wrap #login .wrap {}
-#wrap #login .wrap .gap {}
-#wrap #login .wrap .gap .container {}
-#wrap #login .wrap .gap .container .title {}
-#wrap #login .wrap .gap .container .title h4 {}
+#wrap #login {z-index:5;position:fixed;top:0;right:0;width:540px;height:100vh;padding:60px 0 60px 60px;box-sizing:border-box;color:#fff;background:#555;}
+#wrap #login .wrap {width:100%;height:100%;}
+#wrap #login .wrap .gap {width:100%;height:100%;}
+#wrap #login .wrap .gap .container {width:100%;height:100%;}
+#wrap #login .wrap .gap .container .title {margin-bottom:54px;}
+#wrap #login .wrap .gap .container .title h4 {font-size:14px;font-weight:600;line-height:120%;letter-spacing: 1px;padding-top:6px;}
 
-#wrap #login .wrap .gap .container .before-login {}
-#wrap #login .wrap .gap .container .before-login p {}
+#wrap #login .wrap .gap .container .before-login {width:100%;}
+#wrap #login .wrap .gap .container .before-login p {font-size:38px;font-weight:300;line-height:150%;margin-bottom:74px;}
 #wrap #login .wrap .gap .container .before-login .connect-box {}
-#wrap #login .wrap .gap .container .before-login .connect-box a {}
-#wrap #login .wrap .gap .container .before-login .connect-box a.login-btn {}
-#wrap #login .wrap .gap .container .before-login .connect-box a.login-btn span {}
-#wrap #login .wrap .gap .container .before-login .connect-box a.join-btn {}
-#wrap #login .wrap .gap .container .before-login .connect-box a.join-btn span {}
+#wrap #login .wrap .gap .container .before-login .connect-box a {z-index:1;position:relative;display:inline-block;width:200px;height:60px;outline:1px solid #fff;background:transparent;color:#fff;overflow: hidden;transition:all .35s ease-in-out .35s;}
+#wrap #login .wrap .gap .container .before-login .connect-box a:hover {outline:0;background:#8b2332;color:#fff;}
+#wrap #login .wrap .gap .container .before-login .connect-box a::after {z-index:2;position:absolute;content:'';display:block;width:100%;height:3px;top:0;left:-100%;background:#8b2332;transition:all .35s;}
+#wrap #login .wrap .gap .container .before-login .connect-box a:hover::after {left:0;background:#8b2332;}
+#wrap #login .wrap .gap .container .before-login .connect-box a::before {z-index:2;position:absolute;content:'';display:block;width:100%;height:3px;bottom:0;right:-100%;background:#8b2332;transition:all .35s;}
+#wrap #login .wrap .gap .container .before-login .connect-box a:hover::before {right:0;}
+
+#wrap #login .wrap .gap .container .before-login .connect-box a span {z-index:1;position:relative;display:block;width:100%;line-height:60px;font-size:22px;font-weight:400;color:inherit;letter-spacing: 2px;text-align:center;}
+#wrap #login .wrap .gap .container .before-login .connect-box a span::after {z-index:2;position:absolute;content:'';display:block;width:3px;height:100%;top:-100%;left:0;background:#8b2332;transition:all .35s;}
+#wrap #login .wrap .gap .container .before-login .connect-box a:hover span::after {top:0;}
+#wrap #login .wrap .gap .container .before-login .connect-box a span::before {z-index:2;position:absolute;content:'';display:block;width:3px;height:100%;bottom:-100%;right:0;background:#8b2332;transition:all .35s;}
+#wrap #login .wrap .gap .container .before-login .connect-box a:hover span::before {bottom:0;}
+
+#wrap #login .wrap .gap .container .before-login .connect-box a.login-btn {margin-right:20px;}
 
 #wrap #login .wrap .gap .container > span {}
 #wrap #login .wrap .gap .container > span a.close-btn {}
@@ -309,39 +318,39 @@
 #wrap #main #section3 .wrap .gap .container .right-box .right-box-gap .right-box-wrap .contect-btn-box .contect-btn > span {z-index:1;position:relative;display:block;width:100%;line-height:39px;font-size:16px;font-weight:500;color:inherit;}
 #wrap #main #section3 .wrap .gap .container .right-box .right-box-gap .right-box-wrap .contect-btn-box .contect-btn > span::after {z-index:2;position:absolute;content:'';display:block;width:3px;height:100%;top:-100%;left:0;background:#8b2332;transition:all .35s;}
 #wrap #main #section3 .wrap .gap .container .right-box .right-box-gap .right-box-wrap .contect-btn-box .contect-btn:hover > span::after {top:0;}
-#wrap #main #section3 .wrap .gap .container .right-box .right-box-gap .right-box-wrap .contect-btn-box .contect-btn > span::before {z-index:2;position:absolute;content:'';display:block;width:3px;height:100%;bottom:-100%;right:0;background:#8b2332;transition:all .35s;}
+#wrap #main #section3 .wrap .gap .container .right-box .right-box-gap .right-box-wrap .contect-btn-box .contect-btn > span::before {z-index:2;position:absolute;content:'';display:block;width:3px;height:100%;bottom:-102%;right:0;background:#8b2332;transition:all .35s;}
 #wrap #main #section3 .wrap .gap .container .right-box .right-box-gap .right-box-wrap .contect-btn-box .contect-btn:hover > span::before {bottom:0;}
 
 
 #wrap #main #section3 .wrap .gap .container .left-box {width:auto;} /* width:55% */
 #wrap #main #section3 .wrap .gap .container .left-box .left-wrap {display:flex;/* justify-content:space-between;height:100%; */}
-#wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box {position:relative;width:330px;height:570px;margin-right:20px;/* flex:1 1 0; */background:#fff;overflow:hidden;transition:all .4s ease-out;}/* margin-right:10px */
-#wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box:hover {margin-top:-20px;box-shadow: 10px 20px 30px rgba(0,0,0,.15),5px 5px 20px rgba(0,0,0,.15);}
+#wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box {position:relative;width:330px;height:58.82352941vh;margin-right:20px;/* flex:1 1 0; */background:#fff;overflow:hidden;transition:all .4s ease-out .6s;}/* height:570px */
+#wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box.addLine {margin-top:-20px;box-shadow: 10px 20px 30px rgba(0,0,0,.15),5px 5px 20px rgba(0,0,0,.15);}
 #wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box .line {display:block;position:absolute;width:100%;height:100%;}
 #wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box .line:nth-child(1) {width:100%;height:2px;top:0;left:-100%;background:linear-gradient(90deg, transparent, #8b2332);}
-/* #wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box:hover .line:nth-child(1) {left:100%;animation:lineAni1 .4s;}
+#wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box.addLine .line:nth-child(1) {left:100%;animation:lineAni1 .6s;}
 @keyframes lineAni1 {
     0% {left:-100%;}
     100% {left:100%;}
-} */
+}
 #wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box .line:nth-child(2) {width:2px;height:100%;top:-100%;right:0;background:linear-gradient(180deg, transparent, #8b2332);}
-/* #wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box:hover .line:nth-child(2) {top:100%;animation:lineAni2 .8s;}
+#wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box.addLine .line:nth-child(2) {top:100%;animation:lineAni2 1.2s;}
 @keyframes lineAni2 {
     0% {top:-100%;}
     100% {top:100%;}
-} */
+}
 #wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box .line:nth-child(3) {width:100%;height:2px;bottom:0;right:-100%;background:linear-gradient(270deg, transparent, #8b2332);}
-/* #wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box:hover .line:nth-child(3) {right:100%;animation:lineAni3 1.2s;}
+#wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box.addLine .line:nth-child(3) {right:100%;animation:lineAni3 1.8s;}
 @keyframes lineAni3 {
     0% {right:-100%;}
     100% {right:100%;}
-} */
+}
 #wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box .line:nth-child(4) {width:2px;height:100%;left:0;bottom:-100%;background:linear-gradient(360deg, transparent, #8b2332);}
-/* #wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box:hover .line:nth-child(4) {bottom:100%;animation:lineAni4 1.6s;}
+#wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box.addLine .line:nth-child(4) {bottom:100%;animation:lineAni4 2.4s;}
 @keyframes lineAni4 {
     0% {bottom:-100%;}
     100% {bottom:100%;}
-} */
+}
 #wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box .list-gap {width:100%;height:100%;padding:80px 40px;box-sizing:border-box;}
 #wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box .list-gap .list-wrap {position:relative;width:100%;height:100%;}
 #wrap #main #section3 .wrap .gap .container .left-box .left-wrap .list-box .list-gap .list-wrap > .title {display:block;width:100%;padding-top:87px;font-size:30px;font-weight:300;color:#333;line-height:130%;background:url(../img/thr_list_icon1.png) no-repeat 0 0;}
