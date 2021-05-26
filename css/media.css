@@ -168,7 +168,7 @@
 
     /* footer */
     #wrap #main #footer {height:auto;}
-    #wrap #main #footer .wrap .gap {padding:50px 20px;}
+    #wrap #main #footer .wrap .gap {padding:50px 20px;box-sizing:border-box;}
     #wrap #main #footer .wrap .gap .container {height:310px !important;}
     #wrap #main #footer .wrap .gap .container #footerLogo {position:relative;top:0;left:0;}
     #wrap #main #footer .wrap .gap .container #footerLogo > img {width:90px;}

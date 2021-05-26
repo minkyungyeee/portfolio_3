@@ -23,9 +23,13 @@
                 setTimeout(function(){
                     $loadBox.stop().fadeOut(200);
                 },1000);
+
+                setTimeout(function(){
+                    $html.removeClass('prevenScrl');
+                },1100)
             });
 
-            $html.removeClass('prevenScrl');
+            
         },
         sectionMoveFn:function(){
             var winH = $(window).innerHeight();
