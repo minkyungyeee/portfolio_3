@@ -4,6 +4,7 @@
             var that = this;
                 that.loadFn();
                 that.sectionMoveFn();
+                that.asideFn();
                 that.headerFn();
                 that.section1Fn();
                 that.section1NoticeFn();
@@ -72,6 +73,60 @@
                 }
             });
         },
+        asideFn:function(){
+            var $html = $('html');
+            var $subShow = $('#wrap .sub-show');
+            var $login = $('#login');
+            var $loginBtn = $('#aside .login');
+            var $loginClsBtn = $('#login .close-btn');
+
+            var $search = $('#search');
+            var $searchBtn = $('#aside .search');
+            var $searchClsBtn = $('#search .close-btn');
+            var $selBtn = $('#search .sel-btn');
+
+                $loginBtn.on({
+                    click:function(e){
+                        e.preventDefault();
+                        $html.addClass('addSub');
+                        $subShow.addClass('addAsideActive');
+                        $login.addClass('addActive');
+                    }
+                });
+                $loginClsBtn.on({
+                    click:function(e){
+                        e.preventDefault();
+                        $html.removeClass('addSub');
+                        $subShow.removeClass('addAsideActive');
+                        $login.removeClass('addActive');
+                    }
+                });
+
+                $searchBtn.on({
+                    click:function(e){
+                        e.preventDefault();
+                        $html.addClass('addSub');
+                        $subShow.addClass('addAsideActive');
+                        $search.addClass('addActive');
+                    }
+                });
+                $searchClsBtn.on({
+                    click:function(e){
+                        e.preventDefault();
+                        $html.removeClass('addSub');
+                        $subShow.removeClass('addAsideActive');
+                        $search.removeClass('addActive');
+                    }
+                });
+                $selBtn.each(function(idx){
+                    $(this).on({
+                        click:function(e){
+                            e.preventDefault();
+                            $(this).toggleClass('isSelect');
+                        }
+                    })
+                });
+        },
         headerFn:function(){
             var $html = $('html');
             var $header = $('#header');
@@ -82,9 +137,7 @@
             var $mClose = $('#nav .m-close')
             var $subShow = $('#wrap .sub-show');
 
-            var $login = $('#login');
-            var $loginBtn = $('#aside .login');
-            var $loginClsBtn = $('#login .close-btn');
+
             var pc = 0;
             var mo = 0;
 
@@ -162,21 +215,6 @@
                         }
                     }
                 })
-            });
-
-            $loginBtn.on({
-                click:function(e){
-                    e.preventDefault();
-                    $subShow.addClass('addAsideActive');
-                    $login.addClass('addActive');
-                }
-            });
-            $loginClsBtn.on({
-                click:function(e){
-                    e.preventDefault();
-                    $subShow.removeClass('addAsideActive');
-                    $login.removeClass('addActive');
-                }
             });
         },
         section1Fn:function(){
