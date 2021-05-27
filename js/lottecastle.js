@@ -1,5 +1,6 @@
 ;(function($){
-    var pofol = {
+    var lotte = {
+        btn:0,
         init:function(){
             var that = this;
                 that.loadFn();
@@ -74,6 +75,7 @@
             });
         },
         asideFn:function(){
+            var winH = $(window).innerHeight();
             var $html = $('html');
             var $subShow = $('#wrap .sub-show');
             var $login = $('#login');
@@ -81,51 +83,117 @@
             var $loginClsBtn = $('#login .close-btn');
 
             var $search = $('#search');
+            var searchH = winH;
             var $searchBtn = $('#aside .search');
             var $searchClsBtn = $('#search .close-btn');
             var $selBtn = $('#search .sel-btn');
+            var $resetBtn = $('#search .reset-btn');
 
-                $loginBtn.on({
-                    click:function(e){
-                        e.preventDefault();
-                        $html.addClass('addSub');
-                        $subShow.addClass('addAsideActive');
-                        $login.addClass('addActive');
-                    }
-                });
-                $loginClsBtn.on({
-                    click:function(e){
-                        e.preventDefault();
-                        $html.removeClass('addSub');
-                        $subShow.removeClass('addAsideActive');
-                        $login.removeClass('addActive');
-                    }
-                });
+            var $selDt = $('#search dt');
+            var $selDd = $('#search dd');
+            var pc = 0;
+            var mo = 0;
 
-                $searchBtn.on({
+            function resizeFn(){
+                winH = $(window).innerHeight();
+                if($(window).innerWidth()>1020){
+                    pc = 1;
+                    mo = 0;
+                    searchH = 'auto';
+                    searchPcFn();
+                }
+                else{
+                    searchH = winH;
+                    pc = 0;
+                    mo = 1;
+                    searchMoFn();
+                }
+                $search.css({height:searchH});
+            }
+
+            setTimeout(resizeFn,100);
+
+            $(window).resize(function(){
+                setTimeout(resizeFn,100);
+            });
+
+            $loginBtn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $html.addClass('addSub');
+                    $subShow.addClass('addAsideActive');
+                    $login.addClass('addActive');
+                }
+            });
+            $loginClsBtn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $html.removeClass('addSub');
+                    $subShow.removeClass('addAsideActive');
+                    $login.removeClass('addActive');
+                }
+            });
+
+            $searchBtn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $html.addClass('addSub');
+                    $subShow.addClass('addAsideActive');
+                    $search.addClass('addActive');
+                }
+            });
+            $searchClsBtn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $html.removeClass('addSub');
+                    $subShow.removeClass('addAsideActive');
+                    $search.removeClass('addActive');
+                }
+            });
+            $selBtn.each(function(idx){
+                $(this).on({
                     click:function(e){
                         e.preventDefault();
-                        $html.addClass('addSub');
-                        $subShow.addClass('addAsideActive');
-                        $search.addClass('addActive');
+                        $(this).toggleClass('isSelect');
                     }
                 });
-                $searchClsBtn.on({
-                    click:function(e){
-                        e.preventDefault();
-                        $html.removeClass('addSub');
-                        $subShow.removeClass('addAsideActive');
-                        $search.removeClass('addActive');
-                    }
-                });
-                $selBtn.each(function(idx){
-                    $(this).on({
-                        click:function(e){
-                            e.preventDefault();
-                            $(this).toggleClass('isSelect');
-                        }
-                    })
-                });
+            }); 
+
+            $resetBtn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $selBtn.removeClass('isSelect');
+                }
+            })
+            /* 전체클릭하면 그 줄 다 선택:if문,idx넘버로 컨트롤하기 or 전체btn클릭하면 부모인 dd에 애드클래스되어서 모든버튼 칠해지게하기 두가지중하나로 나중에 구현,,여유되면 
+            선택된항목 필터링영역도 만들기 */
+            console.log($selBtn.length)
+
+            function searchMoFn(){
+                console.log(mo)
+                if(mo == 1){
+                    $selDt.each(function(idx){
+                        $(this).on({
+                            click:function(e){
+                                e.preventDefault();
+                                $selDd.stop().slideUp(300);
+                                if(!$selDt.eq(idx).hasClass('addDepth')){ //다른거 누르면 무조건 초기화
+                                    $selDt.removeClass('addDepth');
+                                }
+    
+                                $(this).next().stop().slideToggle(300);
+                                $(this).toggleClass('addDepth');
+                            }
+                        });
+                    });
+                }
+            }
+
+            function searchPcFn(){
+                $selDd.stop().show();
+                $selDt.removeClass('addDepth');
+            }
+            
         },
         headerFn:function(){
             var $html = $('html');
@@ -147,7 +215,8 @@
                 $html.removeClass('addSub');
                 $subShow.removeClass('addSubActive'); //검은 배경추가
                 $mobileBtn.removeClass('addClick');
-                $mClose.removeClass('addDepth')
+                $sub.stop().hide();
+                $mClose.removeClass('addDepth');
 
                 $nav.css({display:'inline-block'});
 
@@ -613,5 +682,5 @@
             })
         }
     }
-    pofol.init();
+    lotte.init();
 })(jQuery);
