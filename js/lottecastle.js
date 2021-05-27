@@ -170,6 +170,9 @@
             console.log($selBtn.length)
 
             function searchMoFn(){
+                
+                $selDd.stop().hide();
+                $selDt.removeClass('addDepth');
                 console.log(mo)
                 if(mo == 1){
                     $selDt.each(function(idx){

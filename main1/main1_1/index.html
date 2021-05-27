@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio_3</title>
+
+    <!-- CSS -->
+    <!-- 공통스타일 -->
+    <link rel="stylesheet" href="../css/main_reset.css">
+    <link rel="stylesheet" href="../css/main_style.css">
+    <link rel="stylesheet" href="../css/main_media.css">
+    <!-- 해당스타일 -->
+    <link rel="stylesheet" href="./css/sub_style.css">
+    <link rel="stylesheet" href="./css/sub_media.css">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="../../icon/css/font-awesome.min.css">
+    <script src="../../icon/fontawesome.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- js -->
+    <script src="../../js/lib/jquery.min.js"></script>
+    <script src="../../js/lib/jquery.easing.1.3.js"></script>
+    <script src="../../js/lib/jquery.touchSwipe.js"></script>
+
+    <!-- font -->
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"> -->
+</head>
+
+<body>
+<div id="wrap">
+    <!-- header start -->
+    <header id="header">
+        <div class="wrap">
+            <div class="gap">
+                <div class="container clearfix">
+                    <h1 id="logo">
+                        <a href="../../" title="logo">
+                            <img src="../../img/logo.png" alt="header-logo" class="basic">
+                            <img src="../../img/logo-color.png" alt="header-logo" class="over">
+                        </a>
+                    </h1>
+                    <nav id="nav">
+                        <ul>
+                            <li>
+                                <a href="javascript:" class="main-btn" title="main-btn">
+                                    브랜드
+                                    <p class="m-close">
+                                        <span class="close-line close-line0"></span>
+                                        <span class="close-line close-line1"></span>
+                                    </p>
+                                </a>
+                                <div class="sub sub1">
+                                    <div class="sub-gap">
+                                        <ul class="sub-wrap">
+                                            <li><a href="../main1_1/" class="sub-menu" title="sub-menu">브랜드 아이덴티티</a></li>
+                                            <li><a href="../main1_2/" class="sub-menu" title="sub-menu">디자인 아이덴티티</a></li>
+                                            <li><a href="../main1_3/" class="sub-menu" title="sub-menu">브랜디드 컨텐츠</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:" class="main-btn" title="main-btn">
+                                    단지정보
+                                    <p class="m-close">
+                                        <span class="close-line close-line0"></span>
+                                        <span class="close-line close-line1"></span>
+                                    </p>
+                                </a>
+                                <div class="sub sub2">
+                                    <div class="sub-gap">
+                                        <ul class="sub-wrap clearfix">
+                                            <li><a href="../../main2/main2_1/" class="sub-menu" title="sub-menu">분양단지</a></li>
+                                            <li><a href="../../main2/main2_2/" class="sub-menu" title="sub-menu">공사단지</a></li>
+                                            <li><a href="../../main2/main2_3/" class="sub-menu" title="sub-menu">입주단지</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:" class="main-btn" title="main-btn">
+                                    고객서비스
+                                    <p class="m-close">
+                                        <span class="close-line close-line0"></span>
+                                        <span class="close-line close-line1"></span>
+                                    </p>
+                                </a>
+                                <div class="sub sub3">
+                                    <div class="sub-gap">
+                                        <ul class="sub-wrap clearfix">
+                                            <li><a href="../../main3/main3_1/" class="sub-menu" title="sub-menu">공지사항</a></li>
+                                            <li><a href="../../main3/main3_2/" class="sub-menu" title="sub-menu">계약자 방문예약</a></li>
+                                            <li><a href="../../main3/main3_3/" class="sub-menu" title="sub-menu">청약가이드</a></li>
+                                            <li><a href="../../main3/main3_4/" class="sub-menu" title="sub-menu">입주가이드</a></li>
+                                            <li><a href="../../main3/main3_5/" class="sub-menu" title="sub-menu">고객문의</a></li>
+                                            <li><a href="../../main3/main3_6/" class="sub-menu" title="sub-menu">당첨조회</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <aside id="aside">
+                        <ul>
+                            <li class="pc-aside-box search-box"><a href="javascript:" class="pc-aside-btn search" title="pc-aside-btn"></a></li>
+                            <li class="pc-aside-box login-box"><a href="javascript:" class="pc-aside-btn login" title="pc-aside-btn"></a></li>
+                            <li class="pc-aside-box alarm-box"><a href="javascript:" class="pc-aside-btn alarm" title="pc-aside-btn"></a></li>
+                            <li class="pc-aside-box ham-box">
+                                <a href="javascript:" class="mobile-btn" title="mobile-btn">
+                                    <i class="bar bar1"></i>
+                                    <i class="bar bar2"></i>
+                                    <i class="bar bar3"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="sub-show"></div>
+    <!-- search Active(팝업) -->
+    <div id="search">
+        <div class="wrap">
+            <div class="gap">
+                <div class="container">
+                    <div class="search-form-box">
+                        <div class="srch-title">
+                            <input type="text" name="srch-enter" id="srchEnt" placeholder="지역명/아파트명을 입력해주세요.">
+                            <a href="javascript:" class="search-ico">
+                                <img src="../../img/fast-complex-srch-icon.png" alt="search" class="pc-img">
+                                <img src="../../img/m-fast-complex-srch-icon.png" alt="search" class="mo-img">
+                            </a>
+                        </div>
+                        <div class="srch-sel">
+                            <dl>
+                                <dt>현황</dt>
+                                <dd class="sel-btn-box">
+                                    <a href="javascript:" class="sel-btn btn0-1">
+                                        <span>전체</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn0-2">
+                                        <span>분양중</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn0-3">
+                                        <span>분양예정</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn0-4">
+                                        <span>공사중</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn0-5">
+                                        <span>입주예정</span>
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>권역</dt>
+                                <dd class="sel-btn-box">
+                                    <a href="javascript:" class="sel-btn btn1-1">
+                                        <span>전체</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn1-2">
+                                        <span>서울</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn1-3">
+                                        <span>수도권</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn1-4">
+                                        <span>강원권</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn1-5">
+                                        <span>충청권</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn1-6">
+                                        <span>경상권</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn1-7">
+                                        <span>전라권</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn1-8">
+                                        <span>제주권</span>
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>면적</dt>
+                                <dd class="sel-btn-box">
+                                    <a href="javascript:" class="sel-btn btn2-1">
+                                        <span>전체</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn2-2">
+                                        <span class="eng">0㎡~ 65㎡</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn2-3">
+                                        <span class="eng">66㎡~ 100㎡</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn2-4">
+                                        <span class="eng">101㎡~ 130㎡</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn2-5">
+                                        <span class="eng">131㎡~ 165㎡</span>
+                                    </a>
+                                    <a href="javascript:" class="sel-btn btn2-6">
+                                        <span class="eng">166m²~</span>
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="selected-box clearfix">
+                        <p>선택한 키워드</p>
+                        <div class="sel-list clearfix">
+                            <div class="add-area">
+                                <a href="javascript:" class="reset-btn">
+                                    <span>초기화</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-btn-box">
+                        <a href="javascript:" class="search-btn" title="search">
+                            <span>검색</span>
+                        </a>
+                    </div>
+                    <span>
+                        <a href="#" class="close-btn">
+                            <img src="./img/h-quicksrch-xbt.png" alt="close">
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="mo-btn-box clearfix">
+            <a href="javascript:" class="mo-sear-btn close-btn">닫기</a>
+            <a href="javascript:" class="mo-sear-btn reset-btn">초기화</a>
+        </div>
+    </div>
+    <!-- login Active(팝업) -->
+    <div id="login">
+        <div class="wrap">
+            <div class="gap">
+                <div class="container">
+                    <div class="title">
+                        <h4 class="eng">MY CASTLE</h4>
+                    </div>
+                    <div class="before-login">
+                        <p>로그인이 필요한 <br>메뉴입니다</p>
+                        <div class="connect-box">
+                            <a href="javascript:" class="login-btn" title="login">
+                                <span>로그인</span>
+                            </a>
+                            <a href="javascript:" class="join-btn" title="join">
+                                <span>회원가입</span>
+                            </a>
+                        </div>
+                    </div>
+                    <span>
+                        <a href="#" class="close-btn">
+                            <img src="../../img/mycastle-xbt.png" alt="close" class="pc-img">
+                            <img src="../../img/m-mycastle-xbt.png" alt="close" class="mo-img">
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Alarm Active(팝업) -->
+    <div id="alarm">
+    
+    </div>
+    <!-- header end -->
+
+
+    <!-- footer start -->
+    <footer id="footer" class="section">
+        <div class="wrap">
+            <div class="gap">
+                <div class="container">
+                    <h2 id="footerLogo">
+                        <img src="../../img/footer-logo.png" alt="footer-logo">
+                    </h2>
+                    <div class="contect-btn-box">
+                        <a href="javascript:" class="policy-btn" title="policy-btn">개인정보처리방침</a>
+                        <a href="javascript:" class="contect-btn" title="contect-btn">
+                            고객센터 <span class="eng">1688-5500</span>
+                        </a>
+                    </div>
+                    <div class="family-site-box">
+                        <div class="site-wrap">
+                            <div class="site-gap">
+                                <dl class="site-box">
+                                    <dt>
+                                        <a href="javascript:" class="go-site-btn" title="go-site-btn">롯데건설</a>
+                                    </dt>
+                                    <dt>
+                                        <a href="javascript:" class="go-site-btn" title="go-site-btn">윤리경영</a>
+                                    </dt>
+                                    <dt>
+                                        <a href="javascript:" class="go-site-btn eng" title="go-site-btn">ELYES</a>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="family-btn-wrap">
+                            <a href="javascript:" class="family-btn eng" title="family-btn">
+                                <span>FAMILY SITE</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="banner-box">
+                        <a href="javascript:" class="banner-btn" title="banner-btn">
+                            <img src="../../img/footer_banner_1.png" alt="footer_banner">
+                        </a>
+                        <a href="javascript:" class="banner-btn" title="banner-btn">
+                            <img src="../../img/footer_banner_2.jpg" alt="footer_banner">
+                        </a>
+                        <a href="javascript:" class="banner-btn" title="banner-btn">
+                            <img src="../../img/footer_banner_3.gif" alt="footer_banner">
+                        </a>
+                    </div>
+                    <p class="copyright eng">© Lotte Engineering & Construction. all right reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <script src="../js/main_lotte.js"></script>
+    <script src="./js/sub_lotte.js"></script>
+</div>
+</body>
+</html>
