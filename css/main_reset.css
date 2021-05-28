@@ -20,4 +20,4 @@ table {border-collapse:collapse;}
 header,main,section,footer,nav {display:block;}
 button {all:unset;outline:0;appearance:none;background:none;border-radius:0;}
 
-.eng {font-family: "Manrope", "sans-serif";}
+.eng {font-family: "Manrope", "sans-serif";display:inline-block;margin-top:2px;}
