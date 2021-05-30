@@ -7,9 +7,42 @@
                 that.asideFn();
                 that.headerFn();
                 that.footerFn();
+                that.preReadyFn();
         },
         sectionMoveFn:function(){
+            var scrollPrev = 0;
+            var scrollCurrent = 0;
+            var win = $(window);
+            var result = null;
 
+            function wheelPositionFn(){
+                result = scrollPrev - scrollCurrent > 0 ? 'up' : 'down'
+
+                return {
+                    result,scrollPrev,scrollCurrent
+                }
+            }
+
+            win.scroll(function(){
+                scrollCurrent = $(this).scrollTop();
+                wheelPositionFn();
+                console.log(result)
+                if(scrollCurrent <= 10){
+                    $('#header').removeClass('addHide');
+                    $('#header').removeClass('addBg');
+                } else {
+                    if(result === 'down'){
+                        $('#header').addClass('addHide');
+                        $('#header').removeClass('addBg');
+                    }
+                    if (result === 'up'){
+                        $('#header').removeClass('addHide');
+                        $('#header').addClass('addBg');
+                    }
+                }
+
+                scrollPrev = scrollCurrent;
+            });
         },
         asideFn:function(){
             var winH = $(window).innerHeight();
@@ -235,6 +268,55 @@
                     $familySiteBox.toggleClass('addChk');
                 }
             })
+        },
+        preReadyFn:function(){
+            var $preReady = $('#preReady');
+            var $video = $('#readyMovie');
+
+            
+            var winW = $(window).innerWidth();
+            var winH = $(window).innerHeight();
+            var vidW = $video.innerWidth();
+            var vidH = $video.innerHeight();
+            var marginL = (winW - vidW)/2;
+            var marginT = (winH - vidH)/2;
+
+            // function resizeFn(){
+            //     winW = $(window).innerWidth();
+            //     winH = $(window).innerHeight();
+            //     vidW = $video.innerWidth();
+            //     vidH = $video.innerHeight();
+            //     marginL = (winW - vidW)/2;
+            //     marginT = (winH - vidH)/2;
+
+            //     if(winW > vidW){
+            //         $video.css({windth:winW,height:'auto'});
+            //     }
+            //     if(winW > vidH){
+            //         $video.css({width:'auto',height:winH});
+            //     }
+            //     $video.css({marginLeft:marginL,marginTop:marginT});
+            //     $preReady.css({width:winW,height:winH});
+            // }
+
+            function resizeFn(){
+                winW = $(window).innerWidth();
+                winH = $(window).innerHeight();
+
+                if(winH < 600){
+                    winH = 600
+                }
+
+                $preReady.css({height:winH});
+                $video.css({width:winW,height:'auto'})
+
+            }
+
+            setTimeout(resizeFn,100);
+
+            $(window).resize(function(){
+                setTimeout(resizeFn,100);
+            });
         }
     }
     lotte.init();

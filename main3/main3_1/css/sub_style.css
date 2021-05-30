@@ -1,1 +1,35 @@
 @charset "UTF-8";
+#subMain #section2 {width:100%;}
+#subMain #section2 .wrap {width:1160px;margin:0 auto;}
+#subMain #section2 .wrap .gap {padding-bottom:100px;}
+#subMain #section2 .wrap .gap .container {position:relative;width:100%;text-align:center;}
+#subMain #section2 .wrap .gap .container .lotte-board {width:100%;text-align:center;}
+#subMain #section2 .wrap .gap .container .lotte-board thead tr th {border-top:2px solid #8b2332;border-bottom:1px solid #8b2332;height:45px;background:transparent;font-size:18px;font-weight:400;color:#666;text-align:left;}
+#subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(1) {width:70px;}
+#subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(2) {width:auto;}
+#subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(3) {width:120px;}
+#subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(4) {width:70px;}
+
+#subMain #section2 .wrap .gap .container .lotte-board tbody td {border-bottom:1px solid #ddd;height:50px;font-size:14px;color:#111;}
+#subMain #section2 .wrap .gap .container .lotte-board tbody td:nth-child(2) {text-align:left;text-indent:20px;text-overflow: ellipsis;white-space:nowrap;}
+
+
+#subMain #section2 .wrap .gap .container .pagenation-box {position:relative;width:100%;text-align:center;padding:70px 0;}
+#subMain #section2 .wrap .gap .container .pagenation-box .prev-page-box {display:inline-block;}
+#subMain #section2 .wrap .gap .container .pagenation-box .prev-page-box > a {display:inline-block;width:30px;height:30px;line-height:30px;border:1px solid #8a8a8a;box-sizing:border-box;}
+#subMain #section2 .wrap .gap .container .pagenation-box .prev-page-box > a:hover {border:1px solid #8b2332;}
+#subMain #section2 .wrap .gap .container .pagenation-box .prev-page-box .first-prev-btn {background:url(../img/page_first.png) no-repeat 50% 50%;}
+#subMain #section2 .wrap .gap .container .pagenation-box .prev-page-box .prev-btn {position:relative;}
+#subMain #section2 .wrap .gap .container .pagenation-box .prev-page-box .prev-btn::after {position:absolute;top:50%;left:50%;margin-top:-3px;margin-left:-1.5px;content:'';display:block;border:3px solid #888;border-right:3px solid transparent;border-bottom:3px solid transparent;transform:rotate(-45deg);}/*  width:5px;height:5px; border-top:2px solid #888;border-left:2px solid #888; */
+
+#subMain #section2 .wrap .gap .container .pagenation-box .page-num-box {position:relative;top:0;display:inline-block;width:auto;}
+#subMain #section2 .wrap .gap .container .pagenation-box .page-num-box .page-btn {display:inline-block;width:30px;height:30px;font-size:13px;margin:0 3px;line-height:28px;border:1px solid transparent;color:#888;box-sizing:border-box;transition:all .3s;}
+#subMain #section2 .wrap .gap .container .pagenation-box .page-num-box .page-btn:hover {border:1px solid #8b2332;color:#8b2332;}
+#subMain #section2 .wrap .gap .container .pagenation-box .page-num-box .page-btn.addClick {border:1px solid #8b2332;color:#8b2332;border-radius:50%;}
+
+#subMain #section2 .wrap .gap .container .pagenation-box .next-page-box {display:inline-block;}
+#subMain #section2 .wrap .gap .container .pagenation-box .next-page-box > a {display:inline-block;width:30px;height:30px;line-height:30px;border:1px solid #8a8a8a;box-sizing:border-box;}
+#subMain #section2 .wrap .gap .container .pagenation-box .next-page-box > a:hover {border:1px solid #8b2332;}
+#subMain #section2 .wrap .gap .container .pagenation-box .next-page-box .last-next-btn {background:url(../img/page_first.png) no-repeat 50% 50%;transform:rotate(180deg)}
+#subMain #section2 .wrap .gap .container .pagenation-box .next-page-box .next-btn {position:relative;}
+#subMain #section2 .wrap .gap .container .pagenation-box .next-page-box .next-btn::after {position:absolute;top:50%;left:50%;margin-top:-3px;margin-left:-3px;content:'';display:block;border:3px solid #888;border-left:3px solid transparent;border-bottom:3px solid transparent;transform:rotate(45deg);}

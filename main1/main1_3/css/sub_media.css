@@ -1,2 +1,13 @@
 @charset "UTF-8";
+@media all and (max-width:1280px){
+    #subMain #section3 .wrap {width:calc(100% - 10%);}
+}
 
+@media all and (max-width:1020px){
+    #subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery .gal-gap {margin:0 10px 80px 10px;}
+}
+
+@media all and (max-width:780px){
+    #subMain #section3 .wrap {width:calc(100% - 40px);}
+    #subMain #section3 .wrap .gap {padding:60px 0 100px;width:100%;}
+}

@@ -1,2 +1,32 @@
 @charset "UTF-8";
+@media all and (max-width:1280px){
+    #subMain #section2 .wrap {width:100%;margin:0 auto;}
+    #subMain #section2 .wrap .gap {padding:0 30px 100px 30px;box-sizing: border-box;}
+}
+
+@media all and (max-width:980px){
+    
+}
+
+@media all and (max-width:770px){
+    #subMain #section2 .wrap .gap .container .lotte-board thead tr th {height:40px;font-size:15px;}
+    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(1) {width:60px;}
+    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(2) {width:auto;}
+    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(3) {width:100px;}
+    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(4) {width:60px;}
+
+    #subMain #section2 .wrap .gap .container .lotte-board tbody td {height:45px;font-size:13px;color:#111;}
+
+    #subMain #section2 .wrap .gap .container .pagenation-box {padding:50px 0;}
+    #subMain #section2 .wrap .gap .container .pagenation-box .prev-page-box > a {width:26px;height:26px;line-height:26px;}
+
+    #subMain #section2 .wrap .gap .container .pagenation-box .page-num-box .page-btn {width:26px;height:26px;font-size:12px;line-height:24px;}
+    #subMain #section2 .wrap .gap .container .pagenation-box .next-page-box > a {width:26px;height:26px;line-height:26px;}
+}
+
+@media all and (max-width:500px){
+    
+}
+
+
 

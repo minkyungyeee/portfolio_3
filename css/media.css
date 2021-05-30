@@ -87,7 +87,7 @@
     #wrap #header .wrap .gap .container #aside > ul > li.search-box {z-index:1;position:absolute;top:42px;left:0;transform:rotateY(180deg);opacity:0;transition:all .3s;}
     #wrap #header.over .wrap .gap .container #aside > ul > li.search-box {z-index:2;transform:rotateZ(0);opacity:1;}
     #wrap #header .wrap .gap .container #aside > ul > li.ham-box {display:inline-block;width:20px;height:18px;}
-    #wrap #header.over .wrap .gap .container #aside > ul > li > a.mobile-btn .bar {background:#111;}
+    #wrap #header.over .wrap .gap .container #aside > ul > li > a.mobile-btn .bar {background:#666;}
 
     /* search */
     #wrap #search {position:fixed;top:-150%;height:969px;}
