@@ -1,1 +1,96 @@
 @charset "UTF-8";
+#subMain #section2 {width:100%;}
+#subMain #section2 .wrap {width:1160px;margin:0 auto;}
+#subMain #section2 .wrap .gap {padding-bottom:200px;box-sizing: border-box;}
+#subMain #section2 .wrap .gap .container {width:100%;}
+/* title */
+#subMain #section2 .wrap .gap .container .cust-title {}
+#subMain #section2 .wrap .gap .container .cust-title .notice-info {font-size:28px;line-height:40px;color:#333;margin-bottom:25px;font-weight:300;}
+#subMain #section2 .wrap .gap .container .cust-title .import {font-size:16px;line-height:28px;color:#8b2332;margin-bottom:35px;font-weight:300;}
+
+
+/* input box */
+#subMain #section2 .wrap .gap .container .cust-info-box {position:relative;width:100%;}
+#subMain #section2 .wrap .gap .container .cust-info-box .cust-info-content{margin-top: 145px;margin-bottom: 80px;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo {}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .input-title {position:absolute;top: -67px;left:0;font-size:28px;font-weight:300;color:#333;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .essential {position:absolute;top: -37px;right:0;padding-left: 15px;font-size:18px;font-weight:300;color:#333;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .red-dot {display:inline-block;width:5px;height:5px;border-radius:50%;background:#8b2332;margin:3px 10px 0 6px;vertical-align: top;}
+
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box {border-top: 1px solid #333;border-bottom: 1px solid #ddd;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap {padding: 40px 60px;box-sizing: border-box;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap {width:100%;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box {display:table;margin-bottom:30px;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box:last-child {margin-bottom:0;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .tit {display:table-cell;min-width:160px;font-weight:bold;color:#333;vertical-align:middle;font-size:18px;line-height:120%;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box {display:table-cell;position:relative;width:100%;min-height:46px;color:#333;}
+
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box select#aptOption {appearance:none;outline:0;width:570px;padding:5px 35px 5px 14px;box-sizing: border-box;height:46px;color:#aaa;font-weight:300;font-size:16px;border:1px solid #e1e1e1;background:url(../img/select-arrow.png) no-repeat center right 16px #fff;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box select#aptOption option {color:#333;padding:10px;}
+
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box input {appearance:none;outline:0;box-sizing: border-box;height:46px;font-weight:300;font-size:16px;border:1px solid #e1e1e1;background:#fff;padding:5px 14px;}
+
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box input#custName {width:570px;}
+
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box .select-div {margin-top:10px;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box .select-div .phone {margin-bottom:8px;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box .select-div .phone input#phoneNum {width:280px;margin-right:5px;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box .select-div .phone input#numberChk {width:280px;margin-right:5px;}
+
+
+
+
+
+/* calender */
+#subMain #section2 .wrap .gap .container .calender-box {width:100%;margin-top:40px;}
+#subMain #section2 .wrap .gap .container .calender-box .calender {float:left;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap {padding:20px 35px 20px 0;box-sizing:border-box;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap {position:relative;width:100%;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap .cal-btn {position:absolute;top:0;right:0;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap .cal-btn .prev-btn {position:relative;display:inline-block;width:25px;height:25px;border:1px solid #888;margin-right:10px;transition:all .3s;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap .cal-btn .prev-btn:hover {border:1px solid #8b2332;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap .cal-btn .prev-btn::after {position:absolute;top:50%;left:50%;margin-top:-3px;margin-left:-3px;content:'';display:block;width:6px;height:6px;border-top:1px solid #333;border-left:1px solid #333;transform:rotate(45deg);}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap .cal-btn .prev-btn:hover::after {border-top:1px solid #8b2332;border-left:1px solid #8b2332;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap .cal-btn .next-btn {position:relative;display:inline-block;width:25px;height:25px;border:1px solid #888;margin-right:0;transition:all .3s;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap .cal-btn .next-btn:hover {border:1px solid #8b2332;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap .cal-btn .next-btn::after {position:absolute;top:50%;left:50%;margin-top:-5px;margin-left:-3px;content:'';display:block;width:6px;height:6px;border-bottom:1px solid #333;border-right:1px solid #333;transform:rotate(45deg);}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap .cal-btn .next-btn:hover::after {border-bottom:1px solid #8b2332;border-right:1px solid #8b2332;}
+
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table {}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table > caption {font-size:22px;color:#333;letter-spacing:1px;word-spacing:5px;margin-bottom:40px;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr th,
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr td {width:60px;height:60px;border:1px solid #e1e1e1;text-align:center;font-size:16px;font-weight:500;color:#111;cursor:pointer;transition:all .3s;font-family: "Manrope", "sans-serif";}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr td.color {color:#888;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr td.now {color:#fff;background:#8b2332;outline:2px solid #8b2332;outline-offset:1.5px;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr td.click {color:#fff;background:#8b2332;outline:2px solid #8b2332;outline-offset:1.5px;}
+
+
+#subMain #section2 .wrap .gap .container .calender-box .selectday-box {display:inline-block;width:50%;margin-left:35px;text-align:center;}
+#subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap {padding:100px 0;box-sizing: border-box;}
+#subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap {width:100%;}
+#subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap > h3 {font-size:22px;line-height:130%;color:#333;margin-bottom:20px;}
+#subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap > .day-box {font-size:20px;color:#333;margin-bottom:40px;}
+#subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap > .day-box .month {display:inline-block;margin-top:-3px;color:#8b2332;}
+#subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap > .day-box .day {display:inline-block;margin-top:-3px;color:#8b2332;}
+
+
+
+/* 버튼 */
+#subMain #section2 .btn-box {display:inline-block;width:125px;height:45px;}
+#subMain #section2 .btn-box.send-box2 {width:67px;}
+#subMain #section2 .btn-box.confirm-box {width:158px;height:60px;}
+#subMain #section2 .btn-box .btn {z-index:1;position:relative;display:block;width:100%;height:100%;outline:1px solid #888;background:transparent;color:#333;overflow: hidden;transition:all .35s ease-in-out .35s;}
+#subMain #section2 .btn-box .btn:hover {outline:0;background:#8b2332;color:#fff;}
+#subMain #section2 .btn-box .btn::after {z-index:2;position:absolute;content:'';display:block;width:100%;height:3px;top:0;left:-100%;background:#8b2332;transition:all .35s;}
+#subMain #section2 .btn-box .btn:hover::after {left:0;background:#8b2332;}
+
+#subMain #section2 .btn-box .btn::before {z-index:2;position:absolute;content:'';display:block;width:100%;height:3px;bottom:0;right:-100%;background:#8b2332;transition:all .35s;}
+#subMain #section2 .btn-box .btn:hover::before {right:0;}
+
+#subMain #section2 .btn-box .btn > span {z-index:1;position:relative;display:block;width:100%;line-height:45px;font-size:16px;font-weight:300;color:inherit;text-align:center;}
+#subMain #section2 .btn-box .btn.confirm-btn > span {line-height:60px;font-size:22px;}
+#subMain #section2 .btn-box .btn > span::after {z-index:2;position:absolute;content:'';display:block;width:3px;height:100%;top:-100%;left:0;background:#8b2332;transition:all .35s;}
+#subMain #section2 .btn-box .btn:hover > span::after {top:0;}
+
+#subMain #section2 .btn-box .btn > span::before {z-index:2;position:absolute;content:'';display:block;width:3px;height:100%;bottom:-100%;right:0;background:#8b2332;transition:all .35s;}
+#subMain #section2 .btn-box .btn:hover > span::before {bottom:0;}
