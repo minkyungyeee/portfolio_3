@@ -17,8 +17,8 @@
 #subMain #section2 .wrap .gap .slide-container .arrow-box.prev-arrow-box {left:110px;right:auto;}
 #subMain #section2 .wrap .gap .slide-container .arrow-box.next-arrow-box {right:110px;left:auto;}
 
-#subMain #section2 .wrap .gap .slide-container .arrow-box .prev-btn {display:block;width:100%;height:100%;background:url(../img/webzine-arrow-prev.png) no-repeat 50% 50%;}
-#subMain #section2 .wrap .gap .slide-container .arrow-box .next-btn {display:block;width:100%;height:100%;background:url(../img/webzine-arrow-next.png) no-repeat 50% 50%;}
+#subMain #section2 .wrap .gap .slide-container .arrow-box .prev-btn {display:block;width:100%;height:100%;background:url(../img/webzine-arrow-prev.png) no-repeat 50% 50%;background-size:cover;}
+#subMain #section2 .wrap .gap .slide-container .arrow-box .next-btn {display:block;width:100%;height:100%;background:url(../img/webzine-arrow-next.png) no-repeat 50% 50%;background-size:cover;}
 
 #subMain #section2 .wrap .gap .slide-container .pagenation-box {z-index:2;position:absolute;bottom:6%;left:0;width:100%;text-align:center;}
 #subMain #section2 .wrap .gap .slide-container .pagenation-box > li {display:inline-block;width:15px;height:15px;margin:0 10px;}
@@ -55,7 +55,7 @@
 #subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery:nth-child(10) {display:block;top:calc(498px*3);left:calc(33.3333%*0);}
 #subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery:nth-child(11) {display:block;top:calc(498px*3);left:calc(33.3333%*1);}
 #subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery:nth-child(12) {display:block;top:calc(498px*3);left:calc(33.3333%*2);}
-#subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery .gal-gap {padding:0 20px 80px 20px;width:100%;height:100%;box-sizing: border-box;}
+#subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery .gal-gap {padding:0 20px 16.06425703vh 20px;width:100%;height:100%;box-sizing: border-box;}/* padding:0 20px 80px 20px; */
 #subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery .gal-gap .gal-content {position:relative;width:100%;height:100%;}
 #subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery .gal-gap .gal-content .gal-con-box{z-index:1;position:relative;width:100%;height:100%;}
 #subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery .gal-gap .gal-content .gal-con-box .gal-img-box {width:100%;overflow:hidden;}

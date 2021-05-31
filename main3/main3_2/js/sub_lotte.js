@@ -103,11 +103,16 @@
 
             $td.on({
                 click:function(){
-                    $td.removeClass('click');
-                    $td.removeClass('now');
-                    $(this).addClass('click');
-                    $chkDay.html($(this).html());
-                    $chkMonth.html(m)
+                    if($(this).hasClass('color')){
+
+                    }
+                    else {
+                        $td.removeClass('click');
+                        $td.removeClass('now');
+                        $(this).addClass('click');
+                        $chkDay.html($(this).html());
+                        $chkMonth.html(m)
+                    }
                 }
             });
         },

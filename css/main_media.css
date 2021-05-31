@@ -63,6 +63,10 @@
     #wrap #search .wrap .gap .container > span {display:none;}
     #wrap #search .mo-btn-box  {display:block;position:relative;}
 
+    /* go top */
+    #goTop .top-btn > img.pc-top {display:none;}
+    #goTop .top-btn > img.mo-top {display:inline-block;width:55px;}
+
     /* footer */
     #wrap #footer .wrap .gap .container #footerLogo {top:40px;left:40px;}
     #wrap #footer .wrap .gap .container #footerLogo > img {width:100px;}

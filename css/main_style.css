@@ -197,8 +197,8 @@
 #wrap #footer .wrap .gap .container .family-site-box.addChk .site-wrap {display:block;bottom:50px;opacity:1;}
 #wrap #footer .wrap .gap .container .family-site-box .site-wrap .site-gap {width:100%;height:100%;}
 #wrap #footer .wrap .gap .container .family-site-box .site-wrap .site-gap .site-box {width:100%;height:100%;}
-#wrap #footer .wrap .gap .container .family-site-box .site-wrap .site-gap .site-box > dt {padding-top:20px;font-size:16px;}
-#wrap #footer .wrap .gap .container .family-site-box .site-wrap .site-gap .site-box > dt .go-site-btn {display:block;width:100%;color:#888;}
+#wrap #footer .wrap .gap .container .family-site-box .site-wrap .site-gap .site-box > dd {padding-top:20px;font-size:16px;}
+#wrap #footer .wrap .gap .container .family-site-box .site-wrap .site-gap .site-box > dd .go-site-btn {display:block;width:100%;color:#888;}
 #wrap #footer .wrap .gap .container .family-site-box .family-btn-wrap {width:100%;height:40px;overflow: hidden;}
 #wrap #footer .wrap .gap .container .family-site-box .family-btn-wrap .family-btn {position:relative;display:block;text-align:center;width:100%;height:100%;background:#3a3a3a;color:#fff;opacity:0.6;font-size:14px;font-weight:400;letter-spacing: 3px;overflow:hidden;}
 #wrap #footer .wrap .gap .container .family-site-box .family-btn-wrap .family-btn::after {z-index:2;position:absolute;content:'';display:block;width:100%;height:3px;top:0;left:-100%;background:#fff;opacity:1;transition:all .35s;}

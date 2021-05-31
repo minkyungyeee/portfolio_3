@@ -4,7 +4,7 @@
 #subMain #section2 .wrap .gap {padding-bottom:100px;}
 #subMain #section2 .wrap .gap .container {position:relative;width:100%;text-align:center;}
 #subMain #section2 .wrap .gap .container .lotte-board {width:100%;text-align:center;}
-#subMain #section2 .wrap .gap .container .lotte-board thead tr th {border-top:2px solid #8b2332;border-bottom:1px solid #8b2332;height:45px;background:transparent;font-size:18px;font-weight:400;color:#666;text-align:left;}
+#subMain #section2 .wrap .gap .container .lotte-board thead tr th {border-top:2px solid #8b2332;border-bottom:1px solid #8b2332;height:45px;background:transparent;font-size:18px;font-weight:400;color:#666;text-align:center;}
 #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(1) {width:70px;}
 #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(2) {width:auto;}
 #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(3) {width:120px;}

@@ -1,2 +1,83 @@
 @charset "UTF-8";
 
+@media all and (max-width:1280px){
+    #subMain #section2 .wrap {width:100%;}
+    #subMain #section2 .wrap .gap {padding:0 5% 200px 5%;}
+    #subMain #section2 .wrap .gap .container .calender-box .selectday-box {width:30%;margin-left:30px;}
+}
+
+@media all and (max-width:1020px){
+    #subMain #section2 .wrap .gap {padding:0 5% 100px 5%;}
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap {padding:40px 5%;box-sizing: border-box;}
+
+    #subMain #section2 .wrap .gap .container .calender-box .calender {float:none;width:100%;margin-top:35px;text-align:center;}
+    #subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap {display:inline-block;padding:20px 0;box-sizing:border-box;}
+    #subMain #section2 .wrap .gap .container .calender-box .selectday-box {width:100%;margin-left:0;text-align:center;margin-top:0;}
+    #subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap {padding:40px 15% 80px 15%;box-sizing: border-box;}
+    #subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap {position:relative;}
+    #subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap > h3 {display:block;width:50%;font-size:22px;line-height:130%;color:#333;margin-bottom:20px;}
+    #subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap > .day-box {display:block;width:50%;font-size:20px;color:#333;margin-bottom:40px;}
+    #subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap > .day-box .month {display:inline-block;margin-top:-3px;color:#8b2332;}
+    #subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap > .day-box .day {display:inline-block;margin-top:-3px;color:#8b2332;}
+
+    #subMain #section2 .btn-box.confirm-box {position:absolute;top:50%;margin-top:-30px;right:35px;}
+}
+
+@media all and (max-width:980px){
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box select#aptOption {width:100%;}
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box input#custName {width:100%;}
+}
+
+@media all and (max-width:770px){
+    br.pc {display:none;}
+    #subMain #section2 .wrap .gap .container .cust-title .notice-info {font-size:22px;line-height:32px;margin-bottom:20px;}
+    #subMain #section2 .wrap .gap .container .cust-title .import {font-size:15px;line-height:24px;margin-bottom:30px;}
+    
+
+    #subMain #section2 .wrap .gap .container .cust-info-box .cust-info-content{margin-top:90px;}
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap {padding:30px 0;box-sizing: border-box;}
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .input-title {top: -45px;font-size:20px;}
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .essential {top: -33px;font-size:13px;}
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .red-dot {display:inline-block;width:5px;height:5px;border-radius:50%;background:#8b2332;margin:3px 10px 0 6px;vertical-align: top;}
+
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box {display:block;}
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .tit {display:block;min-width:160px;font-weight:bold;color:#333;font-size:16px;line-height:120%;}
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box {display:block;position:relative;width:100%;min-height:38px;color:#333;}
+
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box select#aptOption {margin:10px 6px 0 0;height:38px;font-size:16px;}
+
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box input {appearance:none;outline:0;box-sizing: border-box;height:38px;font-weight:300;font-size:16px;border:1px solid #e1e1e1;background:#fff;padding:5px 14px;}
+
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box input#custName {width:100%;margin:10px 6px 0 0;}
+
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box .select-div .phone input#phoneNum {width:calc(100% - 120px);padding:5px 14px;font-size:14px;}
+    #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box .select-box .select-div .phone input#numberChk {width:calc(100% - 72px);padding:5px 14px;font-size:14px;}
+
+    #subMain #section2 .btn-box {display:inline-block;width:108px;height:38px;}
+    #subMain #section2 .btn-box.send-box2 {width:61px;}
+    #subMain #section2 .btn-box.confirm-box {width:120px;height:50px;}
+    #subMain #section2 .btn-box .btn > span {line-height:38px;font-size:14px;}
+    #subMain #section2 .btn-box .btn.confirm-btn > span {line-height:50px;font-size:18px;}
+
+    #subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap > h3 {font-size:20px;}
+    #subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table > caption {font-size:18px;}
+    #subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr th,
+    #subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr td {font-size:14px;}
+
+    #subMain #section2 .wrap .gap .container .calender-box {margin-top:100px;}
+    #subMain #section2 .wrap .gap .container .calender-box .calender-title {top: -45px;left:0;font-size:20px;font-weight:300;color:#333;}
+    #subMain #section2 .wrap .gap .container .calender-box .calender-title > h2 {font-size:20px;}
+    #subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap > .day-box {font-size:16px;color:#333;margin-bottom:40px;}
+}
+
+@media all and (max-width:500px){
+    #subMain #section2 .wrap .gap .container .cust-title .notice-info {font-size:16px;line-height:22px;margin-bottom:13px;}
+    #subMain #section2 .wrap .gap .container .cust-title .import {font-size:13px;line-height:120%;}
+
+
+    #subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap > h3 {font-size:18px;line-height:150%;margin-bottom:10px;}
+    #subMain #section2 .btn-box.confirm-box {right:0;}
+
+    #subMain #section2 .btn-box.confirm-box {width:100px;height:40px;}
+    #subMain #section2 .btn-box .btn.confirm-btn > span {line-height:40px;font-size:16px;}
+}

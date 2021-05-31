@@ -17,7 +17,7 @@
 #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .essential {position:absolute;top: -37px;right:0;padding-left: 15px;font-size:18px;font-weight:300;color:#333;}
 #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .red-dot {display:inline-block;width:5px;height:5px;border-radius:50%;background:#8b2332;margin:3px 10px 0 6px;vertical-align: top;}
 
-#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box {border-top: 1px solid #333;border-bottom: 1px solid #ddd;}
+#subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box {border-top: 1px solid #333;/* border-bottom: 1px solid #ddd; */}
 #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap {padding: 40px 60px;box-sizing: border-box;}
 #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap {width:100%;}
 #subMain #section2 .wrap .gap .container .cust-info-box form#custInfo .info-table-box .info-table-gap .info-table-wrap .info-box {display:table;margin-bottom:30px;}
@@ -42,8 +42,10 @@
 
 
 /* calender */
-#subMain #section2 .wrap .gap .container .calender-box {width:100%;margin-top:40px;}
-#subMain #section2 .wrap .gap .container .calender-box .calender {float:left;}
+#subMain #section2 .wrap .gap .container .calender-box {position:relative;width:100%;margin-top:165px;border-top: 1px solid #333;}
+#subMain #section2 .wrap .gap .container .calender-box .calender-title {position:absolute;top: -67px;left:0;font-size:28px;font-weight:300;color:#333;}
+#subMain #section2 .wrap .gap .container .calender-box .calender-title > h2 {font-size:28px;font-weight:300;color:#333;}
+#subMain #section2 .wrap .gap .container .calender-box .calender {float:left;margin-top:35px;}
 #subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap {padding:20px 35px 20px 0;box-sizing:border-box;}
 #subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap {position:relative;width:100%;}
 #subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap .cal-btn {position:absolute;top:0;right:0;}
@@ -58,14 +60,15 @@
 
 #subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table {}
 #subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table > caption {font-size:22px;color:#333;letter-spacing:1px;word-spacing:5px;margin-bottom:40px;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr th {background:#eee;}
 #subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr th,
-#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr td {width:60px;height:60px;border:1px solid #e1e1e1;text-align:center;font-size:16px;font-weight:500;color:#111;cursor:pointer;transition:all .3s;font-family: "Manrope", "sans-serif";}
-#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr td.color {color:#888;}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr td {width:80px;height:50px;border:1px solid #e1e1e1;text-align:center;font-size:16px;font-weight:500;color:#111;cursor:pointer;transition:all .3s;font-family: "Manrope", "sans-serif";}
+#subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr td.color {color:#ccc;cursor: default;}
 #subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr td.now {color:#fff;background:#8b2332;outline:2px solid #8b2332;outline-offset:1.5px;}
 #subMain #section2 .wrap .gap .container .calender-box .calender .cal-gap .cal-wrap > table tr td.click {color:#fff;background:#8b2332;outline:2px solid #8b2332;outline-offset:1.5px;}
 
 
-#subMain #section2 .wrap .gap .container .calender-box .selectday-box {display:inline-block;width:50%;margin-left:35px;text-align:center;}
+#subMain #section2 .wrap .gap .container .calender-box .selectday-box {display:inline-block;width:40%;margin-left:35px;text-align:center;margin-top:35px;}
 #subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap {padding:100px 0;box-sizing: border-box;}
 #subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap {width:100%;}
 #subMain #section2 .wrap .gap .container .calender-box .selectday-box .selec-gap .select-wrap > h3 {font-size:22px;line-height:130%;color:#333;margin-bottom:20px;}

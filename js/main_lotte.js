@@ -15,9 +15,9 @@
             var scrollCurrent = 0;
             var win = $(window);
             var result = null;
-            var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+            //var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
             var sclH = $(window).scrollTop() + $(window).height();
-            var footT = $("#footer").offset().top+70;
+            var footT = $("#footer").offset().top;
 
             function wheelPositionFn(){
                 result = scrollPrev - scrollCurrent > 0 ? 'up' : 'down'
@@ -28,12 +28,11 @@
             }
 
             win.scroll(function(){
-                scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+                //scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
                 sclH = $(window).scrollTop() + $(window).height();
-                footT = $("#footer").offset().top+80;
+                footT = $("#footer").offset().top;
                 scrollCurrent = $(this).scrollTop();
 
-                console.log(sclH,footT,scrollBottom)
                 wheelPositionFn();
 
                 if(scrollCurrent <= 10){
@@ -45,15 +44,18 @@
                         $('#header').addClass('addHide');
                         $('#header').removeClass('addBg');
                         $('#goTop').stop().animate({opacity:1},400).css({display:'inline-block'});
-                        // if(sclH >= footT){
-                        //     $('#goTop').css({bottom:310});
-                        // } else {
-                        //     $('#goTop').css({bottom:0});
-                        // }
+                        if(sclH >= footT){
+                            $('#goTop').css({position:'absolute'});
+                        } else {
+                            $('#goTop').css({position:'fixed'});
+                        }
                     }
                     if (result === 'up'){
                         $('#header').removeClass('addHide');
                         $('#header').addClass('addBg');
+                        if(sclH < footT){
+                            $('#goTop').css({position:'fixed'});
+                        }
                     }
                 }
 

@@ -25,7 +25,10 @@
 }
 
 @media all and (max-width:500px){
-    
+    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(1) {width:12vw;}
+    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(2) {width:54.8vw;}
+    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(3) {width:20vw;}
+    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(4) {width:12vw;}
 }
 
 
