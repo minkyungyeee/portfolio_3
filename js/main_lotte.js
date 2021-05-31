@@ -84,6 +84,8 @@
             var $selBtn = $('#search .sel-btn');
             var $resetBtn = $('#search .reset-btn');
 
+            var $selDl = $('#search .srch-sel dl');
+            var selDlH = $('#search .srch-sel dl').innerHeight();
             var $selDt = $('#search dt');
             var $selDd = $('#search dd');
             var pc = 0;
@@ -91,16 +93,20 @@
 
             function resizeFn(){
                 winH = $(window).innerHeight();
+                
                 if($(window).innerWidth()>1020){
                     pc = 1;
                     mo = 0;
                     searchH = 'auto';
+                    selDlH = $('#search .srch-sel dl').innerHeight();
+                    $selDl.css({height:selDlH})
                     searchPcFn();
                 }
                 else{
                     searchH = winH;
                     pc = 0;
                     mo = 1;
+                    $selDl.css({height:'auto'})
                     searchMoFn();
                 }
                 $search.css({height:searchH});
@@ -165,27 +171,26 @@
             console.log($selBtn.length)
 
             function searchMoFn(){
-                
                 $selDd.stop().hide();
                 $selDt.removeClass('addDepth');
-                console.log(mo)
-                if(mo == 1){
-                    $selDt.each(function(idx){
-                        $(this).on({
-                            click:function(e){
-                                e.preventDefault();
-                                $selDd.stop().slideUp(300);
-                                if(!$selDt.eq(idx).hasClass('addDepth')){ //다른거 누르면 무조건 초기화
-                                    $selDt.removeClass('addDepth');
-                                }
-    
-                                $(this).next().stop().slideToggle(300);
-                                $(this).toggleClass('addDepth');
-                            }
-                        });
-                    });
-                }
             }
+
+            $selDd.stop().hide();
+            $selDt.removeClass('addDepth');
+            $selDt.each(function(idx){
+                $(this).on({
+                    click:function(e){
+                        e.preventDefault();
+                        $selDd.stop().slideUp(300);
+                        if(!$selDt.eq(idx).hasClass('addDepth')){ //다른거 누르면 무조건 초기화
+                            $selDt.removeClass('addDepth');
+                        }
+
+                        $(this).next().stop().slideToggle(300);
+                        $(this).toggleClass('addDepth');
+                    }
+                });
+            });
 
             function searchPcFn(){
                 $selDd.stop().show();
