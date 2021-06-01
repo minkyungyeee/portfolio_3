@@ -19,7 +19,6 @@
             var $html = $('html');
 
             $(document).ready(function(){
-                //$loadBox.css({display:'block'}).stop().animate({opacity:0},0).animate({opacity:1},400)
                 $html.addClass('prevenScrl');
                 $loadBox.stop().fadeIn(300);
 
@@ -334,9 +333,6 @@
             var $slideWrap = $('#section1 .slide-wrap');
             var $slide = $('#section1 .slide');
             var $con = $('#section1 .text-box .con');
-            var $con1 = $('#section1 .text-box .con1');
-            var $con2 = $('#section1 .text-box .con2');
-            var $con3 = $('#section1 .text-box .con3');
             var $pageBtn = $('#section1 .pagenation-btn');
             
 
@@ -380,14 +376,8 @@
             function addClassFn(){
                 if(cnt>n-1){cnt=0}
                 if(cnt<0){cnt=n-1}
-                //slide.eq(1,2,3)에만 addClass될꺼 => 실제 0,1,2,3,4있음
-                //cnt는 0,1,2 반복
+
                 $slide.eq(cnt+1).addClass('addSlide');
-                // $con1.css({opacity:1}).stop().animate({top:0},400,function(){
-                //     $con2.css({opacity:1}).stop().animate({top:0},600,function(){
-                //         $con3.css({opacity:1}).stop().animate({top:0},800)
-                //     });
-                // });
                 $con.addClass('addAni');
             }
 
@@ -536,7 +526,7 @@
             var winH = $(window).innerHeight();
             var $sec2 = $('#section2');
             var sec2H = winH;
-            var $basicBg = $('#section2 basic-bg');
+            var $basicBg = $('#section2 .basic-bg');
             var $salesSlide = $('#section2 .sales-slide');
             var $topTxt = $('#section2 .top-txt');
             var topTxtH = winH * 0.309597523;
@@ -592,7 +582,6 @@
                     topTxtH = winH * 0.206398349;
                 }
                 $topTxt.css({height:topTxtH});
-
                 resizeColContrlFn();
             }
 
@@ -606,10 +595,10 @@
 
             function mainSlideFn(){
                 slideW = $('#section2 .sales-slide').innerWidth();
-                $slideUl.stop().animate({left:-slideW * cnt})
-                console.log(i,cnt)
+                $slideUl.stop().animate({left:-slideW * cnt},400);
+                
                 if(cnt==0){
-                    $prevBtn.css({opacity:0.5,cursor:'default'});
+                    $prevBtn.css({opacity:.5,cursor:'default'});
                 }
                 if(cnt>0 && cnt<i){
                     $prevBtn.css({opacity:1,cursor:'pointer'});
@@ -658,14 +647,12 @@
                         $basicBg.addClass('addMouseOver');
                         $(this).addClass('addMouseOver');
                         $bg.stop().animate({opacity:0},600);
-                        $bg.eq(idx).stop().animate({opacity:1},600);
+                        $bg.eq(idx).stop().animate({opacity:1},300);
                     },
                     mouseleave:function(){
                         $salesSlide.removeClass('addMouseOver');
                         $bg.stop().animate({opacity:0},1000);
-                        //$basicBg.stop().animate({opacity:0},300);
                         $basicBg.removeClass('addMouseOver');
-                        
                     }
                 });
             });

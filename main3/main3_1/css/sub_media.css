@@ -25,10 +25,15 @@
 }
 
 @media all and (max-width:500px){
-    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(1) {width:12vw;}
-    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(2) {width:54.8vw;}
-    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(3) {width:20vw;}
-    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(4) {width:12vw;}
+    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(3),
+    #subMain #section2 .wrap .gap .container .lotte-board thead tr th:nth-child(4),
+    #subMain #section2 .wrap .gap .container .lotte-board tbody tr td:nth-of-type(3),
+    #subMain #section2 .wrap .gap .container .lotte-board tbody tr td:nth-of-type(4) {display:none;}
+
+    #subMain #section2 .wrap .gap .container .pagenation-box .prev-page-box > a {width:22px;height:22px;line-height:22px;}
+
+    #subMain #section2 .wrap .gap .container .pagenation-box .page-num-box .page-btn {width:22px;height:22px;font-size:12px;line-height:22px;}
+    #subMain #section2 .wrap .gap .container .pagenation-box .next-page-box > a {width:22px;height:22px;line-height:22px;}
 }
 
 

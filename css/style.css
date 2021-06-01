@@ -301,20 +301,22 @@
 #wrap #main #section2 .wrap {width:100%;height:100%;}
 #wrap #main #section2 .wrap .gap {width:100%;height:100%;}
 #wrap #main #section2 .wrap .gap .container {width:100%;height:100%;}
-#wrap #main #section2 .wrap .gap .container .basic-bg {z-index:1;position:relative;width:100%;height:100%;background:url(../img/sales_bg_01.jpg) no-repeat 50% 50%;background-size:cover;opacity:1;transition:all 1s;}
+#wrap #main #section2 .wrap .gap .container .basic-bg {z-index:1;position:absolute;top:0;left:0;width:100%;height:100%;background:url(../img/sales_bg_01.jpg) no-repeat 50% 50%;background-size:cover;opacity:1;transition:all .6s;}
 #wrap #main #section2 .wrap .gap .container .basic-bg.addMouseOver {opacity:0;}
-#wrap #main #section2 .wrap .gap .container .content {z-index:2;position:absolute;top:0;left:0;width:100%;height:100%;overflow: hidden;}
-#wrap #main #section2 .wrap .gap .container .content > ul {position:relative;left:0;height:100%; display:flex;align-items:flex-start;flex-wrap:nowrap;transform:translate3d(0,0,0)}
+#wrap #main #section2 .wrap .gap .container .content {z-index:2;position:relative;width:100%;height:100%;overflow: hidden;}
+#wrap #main #section2 .wrap .gap .container .content .bg {z-index:1;position:absolute;top:0;left:0;width:100%;height:100%;background:url(../img/202102160955478550.jpg) no-repeat 50% 50%;background-size:cover;opacity:0;}
+#wrap #main #section2 .wrap .gap .container .content .bg0 {background-image:url(../img/202102160955478550.jpg);}
+#wrap #main #section2 .wrap .gap .container .content .bg1 {background-image:url(../img/202102080401326860.jpg);}
+#wrap #main #section2 .wrap .gap .container .content .bg2 {background-image:url(../img/202011300337278260.jpg);}
+#wrap #main #section2 .wrap .gap .container .content .bg3 {background-image:url(../img/202010150333281620.jpg);}
+#wrap #main #section2 .wrap .gap .container .content .bg4 {background-image:url(../img/202010150350323250.jpg);}
+#wrap #main #section2 .wrap .gap .container .content .bg5 {background-image:url(../img/202010150439073300.jpg);}
+#wrap #main #section2 .wrap .gap .container .content .bg6 {background-image:url(../img/202010150341289710.jpg);}
+#wrap #main #section2 .wrap .gap .container .content .bg::after {z-index:2;content:'';display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.3)}
+
+#wrap #main #section2 .wrap .gap .container .content > ul {z-index:3;position:relative;left:0;height:100%; display:flex;}
 #wrap #main #section2 .wrap .gap .container .content > ul .sales-slide {flex-basis: 25%;flex-shrink:0;height:100%}
-#wrap #main #section2 .wrap .gap .container .content > ul .sales-slide .bg {z-index:1;position:absolute;top:0;left:0;width:100%;height:100%;background:url(../img/202102160955478550.jpg) no-repeat 50% 50%;background-size:cover;opacity:0;}
-#wrap #main #section2 .wrap .gap .container .content > ul .sales-slide .bg0 {background-image:url(../img/202102160955478550.jpg);}
-#wrap #main #section2 .wrap .gap .container .content > ul .sales-slide .bg1 {background-image:url(../img/202102080401326860.jpg);}
-#wrap #main #section2 .wrap .gap .container .content > ul .sales-slide .bg2 {background-image:url(../img/202011300337278260.jpg);}
-#wrap #main #section2 .wrap .gap .container .content > ul .sales-slide .bg3 {background-image:url(../img/202010150333281620.jpg);}
-#wrap #main #section2 .wrap .gap .container .content > ul .sales-slide .bg4 {background-image:url(../img/202010150350323250.jpg);}
-#wrap #main #section2 .wrap .gap .container .content > ul .sales-slide .bg5 {background-image:url(../img/202010150439073300.jpg);}
-#wrap #main #section2 .wrap .gap .container .content > ul .sales-slide .bg6 {background-image:url(../img/202010150341289710.jpg);}
-#wrap #main #section2 .wrap .gap .container .content > ul .sales-slide .bg::after {z-index:2;content:'';display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.25)}
+
 #wrap #main #section2 .wrap .gap .container .content > ul .sales-slide .sales-content {z-index:3;position:relative;width:100%;height:100%;transition:all .6s;border-right:1px solid rgba(255,255,255,.15);}
 #wrap #main #section2 .wrap .gap .container .content > ul .sales-slide .sales-content .sales-bg {z-index:1;position:absolute;top:0;left:0;width:100%;height:100%;background:#63232c;opacity:0;transition:all 1s;}/* opacity:0.6 */
 #wrap #main #section2 .wrap .gap .container .content > ul .sales-slide.addMouseOver .sales-content .sales-bg {opacity:0.6;}/* opacity:0.6 */

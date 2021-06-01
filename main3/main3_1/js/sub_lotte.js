@@ -29,6 +29,22 @@
             var groupStartNum = null; //페이지번호 시작 숫자
             var groupEndNum = null; //페이지번호 끝 숫자
 
+            // function resizeFn(){
+            //     if($(window).innerWidth()>500){
+            //         list = 6;
+            //         pageList =10;
+            //     } else {
+            //         list = 5;
+            //         pageList = 5;
+            //     }
+            // }
+
+            // setTimeout(resizeFn,100);
+
+            // $(window).resize(function(){
+            //     setTimeout(resizeFn,100);
+            // });
+
             function ajaxRunFn(){
                 $.ajax({
                     url:'./data/notice.json',
