@@ -118,14 +118,11 @@
             var $selBtn = $('#search .sel-btn');
             var $resetBtn = $('#search .reset-btn');
 
-            var $selDl = $('#search .srch-sel dl');
-            var selDlH = $('#search .srch-sel dl').innerHeight();
             var $selDt = $('#search dt');
             var $selDd = $('#search dd');
-            var selDdH = $('#search dd').innerHeight();
             var pc = 0;
             var mo = 0;
-            var asd = 0;
+            var cn = 0;
 
             function resizeFn(){
                 winH = $(window).innerHeight();
@@ -138,8 +135,6 @@
                     }
                     searchH = 'auto';
                     
-                    // selDlH = $('#search .srch-sel dl').innerHeight();
-                    // $selDl.css({height:selDlH})
                     searchPcFn();
                 }
                 else{
@@ -149,7 +144,6 @@
                     if($login.hasClass('addActive') || $search.hasClass('addActive')){
                         $html.addClass('prevenScrl');
                     }
-                    //$selDl.css({height:'auto'})
                     searchMoFn();
                 }
                 $search.css({height:searchH});
@@ -216,7 +210,6 @@
             });
 
             function searchMoFn(){
-                
                 $selDd.stop().hide();
                 $selDt.removeClass('addDepth');
             }
@@ -225,7 +218,7 @@
                 $(this).on({
                     click:function(e){
                         e.preventDefault();
-                        if(asd !== idx){
+                        if(cn !== idx){ //나자신을 클릭한게 아니고 다른거 클릭햇을때만 이거작동!
                             $selDd.stop().slideUp(300);
                         }
                         if(!$selDt.eq(idx).hasClass('addDepth')){ //다른거 누르면 무조건 초기화
@@ -234,7 +227,7 @@
 
                         $(this).next().stop().slideToggle(300);
                         $(this).toggleClass('addDepth');
-                        asd = idx;
+                        cn = idx;
                     }
                 });
             });

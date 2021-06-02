@@ -90,6 +90,7 @@
             var $selDd = $('#search dd');
             var pc = 0;
             var mo = 0;
+            var cn = 0;
 
             function resizeFn(){
                 winH = $(window).innerHeight();
@@ -97,18 +98,10 @@
                 if($(window).innerWidth()>1020){
                     pc = 1;
                     mo = 0;
-                    // if($login.hasClass('addActive') || $search.hasClass('addActive')){
-                    //     if(!$html.hasClass('addSub')){
-                    //         console.log($html.hasClass('addSub'))
-                    //         $html.addClass('addSub');
-                    //     }
-                    // }
                     if($login.hasClass('addActive') || $search.hasClass('addActive')){
                         $html.addClass('prevenScrl');
                     }
                     searchH = 'auto';
-                    selDlH = $('#search .srch-sel dl').innerHeight();
-                    $selDl.css({height:selDlH})
                     searchPcFn();
                 }
                 else{
@@ -118,7 +111,6 @@
                     if($login.hasClass('addActive') || $search.hasClass('addActive')){
                         $html.addClass('prevenScrl');
                     }
-                    $selDl.css({height:'auto'})
                     searchMoFn();
                 }
                 $search.css({height:searchH});
@@ -184,33 +176,33 @@
             선택된항목 필터링영역도 만들기 */
             console.log($selBtn.length)
 
+            function searchPcFn(){
+                $selDd.stop().show();
+                $selDt.removeClass('addDepth');
+            }
+
             function searchMoFn(){
                 $selDd.stop().hide();
                 $selDt.removeClass('addDepth');
             }
 
-            $selDd.stop().hide();
-            $selDt.removeClass('addDepth');
             $selDt.each(function(idx){
                 $(this).on({
                     click:function(e){
                         e.preventDefault();
-                        $selDd.stop().slideUp(300);
+                        if(cn !== idx){
+                            $selDd.stop().slideUp(300);
+                        }
                         if(!$selDt.eq(idx).hasClass('addDepth')){ //다른거 누르면 무조건 초기화
                             $selDt.removeClass('addDepth');
                         }
 
                         $(this).next().stop().slideToggle(300);
                         $(this).toggleClass('addDepth');
+                        cn = idx;
                     }
                 });
             });
-
-            function searchPcFn(){
-                $selDd.stop().show();
-                $selDt.removeClass('addDepth');
-            }
-            
         },
         headerFn:function(){
             var $html = $('html');
