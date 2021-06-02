@@ -48,7 +48,7 @@
 
     /* search */
     #wrap #search {position:fixed;top:-150%;height:969px;}
-    #wrap #search .wrap {background:#f6f6f6;height:calc(100% - 50px);overflow-y: scroll;}
+    #wrap #search .wrap {background:#f6f6f6;height:calc(100% - 50px);overflow-y:auto;}
     #wrap #search .wrap .gap .container .search-form-box {padding:40px 0 30px;box-sizing:border-box;}
     #wrap #search .wrap .gap .container .search-form-box .srch-title {width:100%;}
     #wrap #search .wrap .gap .container .search-form-box .srch-sel dl {margin-bottom:30px;border-bottom:1px solid #ddd;box-sizing: border-box;}

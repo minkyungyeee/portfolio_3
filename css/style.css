@@ -90,7 +90,7 @@
 
 
 /* search active */
-#wrap #search {z-index:5;position:absolute;top:-100%;left:0;width:100%;overflow:hidden;transition:all .6s;}
+#wrap #search {z-index:5;position:fixed;top:-100%;left:0;width:100%;overflow:hidden;transition:all .6s;}
 #wrap #search.addActive {top:0;}
 #wrap #search .wrap {width:100%;background:#fff;}
 #wrap #search .wrap .gap {width:1160px;margin:0 auto;padding-bottom:100px;box-sizing:border-box;}
@@ -105,7 +105,7 @@
 #wrap #search .wrap .gap .container .search-form-box .srch-sel {width:100%;}
 #wrap #search .wrap .gap .container .search-form-box .srch-sel dl {width:100%;margin-bottom:10px;}
 #wrap #search .wrap .gap .container .search-form-box .srch-sel dl::after {content:'';display:block;clear:both;}
-#wrap #search .wrap .gap .container .search-form-box .srch-sel dl dt {position:relative;float:left;width:88px;font-size:20px;color:#333;line-height:120%;font-weight:300;padding-top: 10px;}
+#wrap #search .wrap .gap .container .search-form-box .srch-sel dl dt {position:relative;float:left;width:88px;font-size:20px;color:#333;line-height:120%;font-weight:300;padding-top: 10px;margin-bottom:0;}
 #wrap #search .wrap .gap .container .search-form-box .srch-sel dl dd.sel-btn-box {float:right;width:calc(100% - 88px);}
 #wrap #search .wrap .gap .container .search-form-box .srch-sel dl dd.sel-btn-box::after {content:'';display:block;clear:both;}
 #wrap #search .wrap .gap .container .search-form-box .srch-sel dl dd.sel-btn-box a.sel-btn {position:relative;float:left;display:table;width:134px;height:42px;box-sizing: border-box;background:#fff;}

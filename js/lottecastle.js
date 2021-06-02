@@ -122,8 +122,10 @@
             var selDlH = $('#search .srch-sel dl').innerHeight();
             var $selDt = $('#search dt');
             var $selDd = $('#search dd');
+            var selDdH = $('#search dd').innerHeight();
             var pc = 0;
             var mo = 0;
+            var asd = 0;
 
             function resizeFn(){
                 winH = $(window).innerHeight();
@@ -131,16 +133,23 @@
                 if($(window).innerWidth()>1020){
                     pc = 1;
                     mo = 0;
+                    if($login.hasClass('addActive') || $search.hasClass('addActive')){
+                        $html.addClass('prevenScrl');
+                    }
                     searchH = 'auto';
-                    selDlH = $('#search .srch-sel dl').innerHeight();
-                    $selDl.css({height:selDlH})
+                    
+                    // selDlH = $('#search .srch-sel dl').innerHeight();
+                    // $selDl.css({height:selDlH})
                     searchPcFn();
                 }
                 else{
                     searchH = winH;
                     pc = 0;
                     mo = 1;
-                    $selDl.css({height:'auto'})
+                    if($login.hasClass('addActive') || $search.hasClass('addActive')){
+                        $html.addClass('prevenScrl');
+                    }
+                    //$selDl.css({height:'auto'})
                     searchMoFn();
                 }
                 $search.css({height:searchH});
@@ -152,6 +161,7 @@
                 setTimeout(resizeFn,100);
             });
 
+            /* 로그인 */
             $loginBtn.on({
                 click:function(e){
                     e.preventDefault();
@@ -164,11 +174,14 @@
                 click:function(e){
                     e.preventDefault();
                     $html.removeClass('addSub');
+                    $html.removeClass('prevenScrl'); //리사이즈때 headerFn때문에 addSub가 사라져서이걸로 잡음(이건 모바일메뉴땜에 잡아둔거임)
                     $subShow.removeClass('addAsideActive');
                     $login.removeClass('addActive');
                 }
             });
 
+
+            /* 검색 */
             $searchBtn.on({
                 click:function(e){
                     e.preventDefault();
@@ -181,6 +194,7 @@
                 click:function(e){
                     e.preventDefault();
                     $html.removeClass('addSub');
+                    $html.removeClass('prevenScrl'); //리사이즈때 headerFn때문에 addSub가 사라져서이걸로 잡음(이건 모바일메뉴땜에 잡아둔거임)
                     $subShow.removeClass('addAsideActive');
                     $search.removeClass('addActive');
                 }
@@ -199,10 +213,7 @@
                     e.preventDefault();
                     $selBtn.removeClass('isSelect');
                 }
-            })
-            /* 전체클릭하면 그 줄 다 선택:if문,idx넘버로 컨트롤하기 or 전체btn클릭하면 부모인 dd에 애드클래스되어서 모든버튼 칠해지게하기 두가지중하나로 나중에 구현,,여유되면 
-            선택된항목 필터링영역도 만들기 */
-            console.log($selBtn.length)
+            });
 
             function searchMoFn(){
                 
@@ -210,19 +221,20 @@
                 $selDt.removeClass('addDepth');
             }
 
-            $selDd.stop().hide();
-            $selDt.removeClass('addDepth');
             $selDt.each(function(idx){
                 $(this).on({
                     click:function(e){
                         e.preventDefault();
-                        $selDd.stop().slideUp(300);
+                        if(asd !== idx){
+                            $selDd.stop().slideUp(300);
+                        }
                         if(!$selDt.eq(idx).hasClass('addDepth')){ //다른거 누르면 무조건 초기화
                             $selDt.removeClass('addDepth');
                         }
 
                         $(this).next().stop().slideToggle(300);
                         $(this).toggleClass('addDepth');
+                        asd = idx;
                     }
                 });
             });

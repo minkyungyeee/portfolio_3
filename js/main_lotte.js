@@ -97,6 +97,15 @@
                 if($(window).innerWidth()>1020){
                     pc = 1;
                     mo = 0;
+                    // if($login.hasClass('addActive') || $search.hasClass('addActive')){
+                    //     if(!$html.hasClass('addSub')){
+                    //         console.log($html.hasClass('addSub'))
+                    //         $html.addClass('addSub');
+                    //     }
+                    // }
+                    if($login.hasClass('addActive') || $search.hasClass('addActive')){
+                        $html.addClass('prevenScrl');
+                    }
                     searchH = 'auto';
                     selDlH = $('#search .srch-sel dl').innerHeight();
                     $selDl.css({height:selDlH})
@@ -106,6 +115,9 @@
                     searchH = winH;
                     pc = 0;
                     mo = 1;
+                    if($login.hasClass('addActive') || $search.hasClass('addActive')){
+                        $html.addClass('prevenScrl');
+                    }
                     $selDl.css({height:'auto'})
                     searchMoFn();
                 }
@@ -130,6 +142,7 @@
                 click:function(e){
                     e.preventDefault();
                     $html.removeClass('addSub');
+                    $html.removeClass('prevenScrl');
                     $subShow.removeClass('addAsideActive');
                     $login.removeClass('addActive');
                 }
@@ -147,6 +160,7 @@
                 click:function(e){
                     e.preventDefault();
                     $html.removeClass('addSub');
+                    $html.removeClass('prevenScrl');
                     $subShow.removeClass('addAsideActive');
                     $search.removeClass('addActive');
                 }
