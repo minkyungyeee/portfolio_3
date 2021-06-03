@@ -317,8 +317,6 @@
             }
 
             function mobileEventFn(){
-                //$sub.stop().hide(); 이거있으면 리사이즈될때마다 서브가 사라져버려서 없앰
-
                 $mainBtn.off('mouseenter');
                 $nav.off('mouseleave');
             }
@@ -506,7 +504,6 @@
             var next = [];
             var setId = null;
             var setId2 = null;
-            var setId3 = null;
 
             function mainNextSlideFn(){
                 $noCntroBox.removeClass('addRolling');
@@ -588,7 +585,7 @@
 
             function resizeColContrlFn(){
                 if(winW > 1800){ //4개씩 한 화면
-                    cnt > 3 ? cnt=3:cnt;
+                    cnt > 3 ? cnt=3:cnt; //리사이즈시 빈칸 생기기 막음
                     i = 3;
                 }
                 else if(winW > 1020){ //3개씩 한 화면
@@ -635,7 +632,6 @@
             win.resize(function(){
                 setTimeout(resizeFn,100);
                 setTimeout(mainSlideFn,100); //리사이즈될때마다 넓이값 맞게 움직
-                //$slideUl.stop().animate({left:-slideW * cnt},0)
             });
 
             function mainSlideFn(){
@@ -658,7 +654,7 @@
             function nextCountFn(){
                 cnt ++;
                 if(cnt>i){cnt=i}
-                console.log(cnt)
+                //console.log(cnt)
                 mainSlideFn();
             }
 

@@ -42,7 +42,8 @@
 
 #subMain #section3 .wrap .gap .container .gallery-wrap {width:100%;margin-top:57px;}
 #subMain #section3 .wrap .gap .container .gallery-wrap > ul {position:relative;width:100%;height:calc(498px*4);}
-#subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery {position:absolute;width:33.3333%;height:498px;}/* top:100px opacity:0에서 top 0 opacity1로이벤트 */
+#subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery {position:absolute;width:33.3333%;height:498px;top:100px;opacity:0;transition:all .6s;}/* top:100px opacity:0에서 top 0 opacity1로이벤트 */
+#subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery.addScrl {top:0;opacity:1;}
 #subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery:nth-child(1) {display:block;top:calc(498px*0);left:calc(33.3333%*0);}
 #subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery:nth-child(2) {display:block;top:calc(498px*0);left:calc(33.3333%*1);}
 #subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery:nth-child(3) {display:block;top:calc(498px*0);left:calc(33.3333%*2);}

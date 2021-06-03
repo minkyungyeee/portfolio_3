@@ -6,6 +6,7 @@
                 that.section1Fn();
                 that.section2Fn();
                 that.section3Fn();
+                that.sclEventFn();
         },
         section1Fn:function(){
 
@@ -221,6 +222,25 @@
                 mouseleave:function(e){
                     e.preventDefault();
                     $imgBox.removeClass('addHover');
+                }
+            });
+        },
+        sclEventFn:function(){
+            var $gal = $('.gallery-wrap > ul .gallery');
+            var setId = null;
+
+            $(window).scroll(function(){
+                if($(window).scrollTop() >= $('#section3').offset().top-400){
+                    var ms = 200;
+                    $gal.each(function(idx){
+                        var that = $(this);
+                        setId = setTimeout(function(){
+                            that.addClass('addScrl')
+                        },ms*idx);
+                    });
+                }
+                else if($(window).scrollTop()<=500){
+                    clearTimeout(setId);
                 }
             });
         }
