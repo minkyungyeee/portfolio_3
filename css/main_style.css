@@ -78,7 +78,7 @@
 
 
 /* search active */
-#wrap #search {z-index:5;position:fixed;top:-100%;left:0;width:100%;overflow:hidden;transition:all .6s;}
+#wrap #search {z-index:5;position:fixed;top:-200%;left:0;width:100%;overflow:hidden;transition:all .6s;}
 #wrap #search.addActive {top:0;}
 #wrap #search .wrap {width:100%;background:#fff;}
 #wrap #search .wrap .gap {width:1160px;margin:0 auto;padding-bottom:100px;box-sizing:border-box;}

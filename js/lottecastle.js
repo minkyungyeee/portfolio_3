@@ -63,6 +63,8 @@
             openPopFn();
         },
         sectionMoveFn:function(){
+            var win = $(window);
+            var winW = $(window).innerWidth();
             var winH = $(window).innerHeight();
             var $main = $('#main');
             var $header = $('#header');
@@ -70,38 +72,75 @@
             var n = $('#main .section').length; //3
             var cnt = 0; //스크롤 카운트
             var wheelDelta = 0;
+            var wheel = true;
 
-            $main.on('mousewheel DOMMouseScroll', function(e){
-                e.preventDefault();
-                //console.log(e) => 아래로움직이면 -120, 위로움직이면 120
-                if(e.originalEvent.wheelDelta){ //파이어폭스 제외 모든 브라우저
-                    wheelDelta = e.originalEvent.wheelDelta;
+            function resizeFn(){
+                winW = $(window).innerWidth();
+                winH = $(window).innerHeight();
+                if(winH>700){
+                    wheel = true;
+                    mouseWheelFn();
                 }
-                else{
-                    wheelDelta = e.detail*-1; //파이어폭스
+                if(winH<=700 || winW<=770){
+                    wheel = false;
+                    mouseWheelFn();
                 }
+            }
 
-                n = $('#main .section').length;
+            setTimeout(resizeFn,100);
 
-                if(!$('html,body').is(':animated')){
-                    if(wheelDelta < 0){
-                        cnt ++;
-                        $header.addClass('addHide');
-                        if(cnt<n){
-                            $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
-                        }
-                        else{
-                            cnt = n-1;
-                        }
-                    }
-                    else {
-                        cnt--;
-                        $header.removeClass('addHide');
-                        if(cnt<0){cnt=0;}
-                        $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
-                    }
-                }
+            $(window).resize(function(){
+                setTimeout(resizeFn,100);
             });
+
+            function mouseWheelFn(){
+                if(wheel === true){
+                    win.off('scroll');
+                    $main.on('mousewheel DOMMouseScroll', function(e){
+                        e.preventDefault();
+                            //console.log(e) => 아래로움직이면 -120, 위로움직이면 120
+                            if(e.originalEvent.wheelDelta){ //파이어폭스 제외 모든 브라우저
+                                wheelDelta = e.originalEvent.wheelDelta;
+                            }
+                            else{
+                                wheelDelta = e.detail*-1; //파이어폭스
+                            }
+            
+                            n = $('#main .section').length;
+            
+                            if(!$('html,body').is(':animated')){
+                                if(wheelDelta < 0){
+                                    cnt ++;
+                                    $header.addClass('addHide');
+                                    if(cnt<n){
+                                        $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
+                                    }
+                                    else{
+                                        cnt = n-1;
+                                    }
+                                }
+                                else {
+                                    cnt--;
+                                    $header.removeClass('addHide');
+                                    if(cnt<0){cnt=0;}
+                                    $('html,body').stop().animate({scrollTop:$section.eq(cnt).offset().top},600,'easeInSine');
+                                }
+                            }
+                    });
+                }
+
+                else {
+                    $main.off('mousewheel DOMMouseScroll');
+                    win.on('scroll', function(){
+                        if($(this).scrollTop() <= 10){
+                            $('#header').removeClass('addHide');
+                        } else {
+                            $('#header').addClass('addHide');
+                        }
+                    });
+                }
+
+            }
         },
         asideFn:function(){
             var winH = $(window).innerHeight();
@@ -351,6 +390,9 @@
                 winW = $(window).innerWidth();
                 winH = $(window).innerHeight();
 
+                if(winH < 600){
+                    winH = 600;
+                }
                 $sec1.css({width:winW,height:winH});
                 $slide.css({width:winW,height:winH});
             }
@@ -546,24 +588,22 @@
 
             function resizeColContrlFn(){
                 if(winW > 1800){ //4개씩 한 화면
+                    cnt > 3 ? cnt=3:cnt;
                     i = 3;
                 }
                 else if(winW > 1020){ //3개씩 한 화면
+                    cnt > 4 ? cnt=4:cnt;
                     i = 4;
                 }
                 else if(winW > 770){ //2개씩 한 화면
+                    cnt > 5 ? cnt=5:cnt;
                     i = 5;
                 }
                 else {  //1개씩 한 화면
+                    cnt > 6 ? cnt=6:cnt;
                     i = 6;
                 }
             }
-
-/*             function resizeHeiContrlFn(){
-                if(winH < 600){
-                    slideH = 600
-                }
-            } */
 
             function resizeFn(){
                 winW = $(window).innerWidth();
@@ -618,6 +658,7 @@
             function nextCountFn(){
                 cnt ++;
                 if(cnt>i){cnt=i}
+                console.log(cnt)
                 mainSlideFn();
             }
 
@@ -628,7 +669,8 @@
             }
 
             $prevBtn.on({
-                click:function(){
+                click:function(e){
+                    e.stopImmediatePropagation();
                     if(!$slideUl.is(':animated')){
                         //chk --;
                         prevCountFn();
@@ -637,7 +679,8 @@
             });
 
             $nextBtn.on({
-                click:function(){
+                click:function(e){
+                    e.stopImmediatePropagation();
                     if(!$slideUl.is(':animated')){
                         //chk ++;
                         nextCountFn();
@@ -677,7 +720,7 @@
 
                 $sec3.css({width:winW,height:sec3H});
                 
-                if(winW <= 770){
+                if(winW <= 770 || winH <= 700){
                     $sec3.css({height:'auto'});
                 }
 
