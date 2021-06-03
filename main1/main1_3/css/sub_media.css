@@ -18,9 +18,6 @@
     #subMain #section2 .wrap .gap .slide-container .arrow-box {width:30px;height:30px;margin-top:-15px;}
     #subMain #section2 .wrap .gap .slide-container .arrow-box.prev-arrow-box {left:7%;right:auto;}
     #subMain #section2 .wrap .gap .slide-container .arrow-box.next-arrow-box {right:7%;left:auto;}
-
-    /* section3 */
-    #subMain #section3 .wrap .gap .container .gallery-wrap > ul .gallery .gal-gap {margin:0 10px 80px 10px;}
 }
 
 @media all and (max-width:980px){
