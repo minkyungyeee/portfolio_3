@@ -227,20 +227,26 @@
         },
         sclEventFn:function(){
             var $gal = $('.gallery-wrap > ul .gallery');
-            var setId = null;
+            var src = 0;
 
             $(window).scroll(function(){
                 if($(window).scrollTop() >= $('#section3').offset().top-400){
-                    var ms = 200;
-                    $gal.each(function(idx){
-                        var that = $(this);
-                        setId = setTimeout(function(){
-                            that.addClass('addScrl')
-                        },ms*idx);
-                    });
-                }
-                else if($(window).scrollTop()<=500){
-                    clearTimeout(setId);
+                    if(src===0){
+                        var ms = 200;
+                        $gal.each(function(idx){
+                            var that = $(this);
+                            setTimeout(function(){
+                                that.addClass('addScrl')
+                            },ms*idx);
+                        });
+
+                        src = 1;
+                    }
+                } else if($(window).scrollTop()<=10){
+                    if(src===1){
+                        $gal.removeClass('addScrl');
+                        src = 0;
+                    }
                 }
             });
         }
